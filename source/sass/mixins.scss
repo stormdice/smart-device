@@ -1,19 +1,10 @@
 @mixin container {
-  max-width: $mobile-width;
-  margin-right: auto;
-  margin-left: auto;
-  box-sizing: border-box;
+  padding-right: 14px;
+  padding-left: 14px;
 
   @media (min-width: $tablet-width) {
-    max-width: $tablet-width;
-  }
-
-  @media (min-width: $desktop-width) {
-    max-width: $desktop-width;
-  }
-
-  @media (min-width: $desktop-wide-width) {
-    max-width: $desktop-wide-width;
+    padding-right: 25px;
+    padding-left: 25px;
   }
 }
 
@@ -24,21 +15,10 @@
   list-style: none;
 }
 
-@mixin title-h1 {
-  font-family: "Montserrat", "Arial", sans-serif;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 25px;
-
-  @media (min-width: $tablet-width) {
-    font-size: 38px;
-    line-height: 46px;
-  }
-
-  @media (min-width: $desktop-wide-width) {
-    font-size: 41px;
-    line-height: 50px;
-  }
+@mixin title($margin-bottom: 0) {
+  margin-top: 0;
+  margin-bottom: $margin-bottom;
+  font-family: $font-alt;
 }
 
 @mixin reset-btn {

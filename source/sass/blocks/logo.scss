@@ -1,0 +1,43 @@
+.logo {
+  display: flex;
+  margin-right: auto;
+}
+
+.logo__img {
+  width: 38px;
+  height: 38px;
+
+  @media (min-width: $tablet-width) {
+    width: 52px;
+    height: 52px;
+    margin-right: 16px;
+  }
+}
+
+.logo__container {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+.logo__text {
+  display: block;
+
+  &:first-child {
+    font-family: $font-alt;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    color: white;
+  }
+
+  &:last-child {
+    font-family: $font-alt2;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #788891;
+  }
+}

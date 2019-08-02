@@ -1,0 +1,48 @@
+.promo {
+  padding-top: 194px;
+  background-image: url("../img/boards@1x-mobile.png");
+  background-repeat: no-repeat;
+
+  & h2 {
+    @include title(30px);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  & p {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-left: 48px;
+    line-height: 156%;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      background-color: white;
+      width: 33px;
+      height: 2px;
+    }
+  }
+}
+
+.promo__btn-text {
+  &:last-child {
+    display: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    &:first-child {
+      display: none;
+    }
+
+    &:last-child {
+      display: block;
+    }
+  }
+}
