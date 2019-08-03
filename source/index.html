@@ -12,43 +12,87 @@
       <include src="build/img/sprite.svg"></include>
     </div>
     <header class="header">
-      <div class="header__top">
-        <a class="logo">
-          <img
-            class="logo__img"
-            src="img/content/logo.svg"
-            alt="логотип Smart Device"
-          />
-          <div class="logo__container">
-            <span class="logo__text">Smart Device</span>
-            <span class="logo__text">умные технологии</span>
-          </div>
-        </a>
-        <button class="menu">
-          <span>меню</span>
-        </button>
-        <a class="header__contacts" href="mailto:info@sd.ru">
-          <svg width="19" height="14">
-            <use xlink:href="#message"></use>
-          </svg>
-          <span>info@sd.ru</span>
-        </a>
-        <a class="header__contacts" href="tel:+74950005252">
-          <svg width="18" height="18">
-            <use xlink:href="#phone-call"></use>
-          </svg>
-          <span>+7 (495) 000 52 52</span></a
-        >
-        <a class="btn header__order" href="#">Заказать звонок</a>
+      <div class="header__container">
+        <div class="header__top">
+          <a class="logo">
+            <img
+              class="logo__img"
+              src="img/content/logo.svg"
+              alt="логотип Smart Device"
+            />
+            <div class="logo__container">
+              <span class="logo__text">Smart Device</span>
+              <span class="logo__text">умные технологии</span>
+            </div>
+          </a>
+          <button class="menu">
+            <span>меню</span>
+          </button>
+          <a
+            class="header__contacts header__contacts--email"
+            href="mailto:info@sd.ru"
+          >
+            <svg width="25" height="18">
+              <use xlink:href="#message"></use>
+            </svg>
+            <span>info@sd.ru</span>
+          </a>
+          <a
+            class="header__contacts header__contacts--tel"
+            href="tel:+74950005252"
+          >
+            <svg width="24" height="24">
+              <use xlink:href="#phone-call"></use>
+            </svg>
+            <span>+7 (495) 000 52 52</span></a
+          >
+          <a class="btn header__order" href="#">Заказать звонок</a>
+        </div>
+        <section class="promo">
+          <h2>Печатные платы</h2>
+          <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
+          <a class="btn promo__consultation" href="">
+            <span class="promo__consultation-text"
+              >бесплатная консультация</span
+            >
+            <span class="promo__consultation-text"
+              >Получить бесплатную консультацию</span
+            >
+          </a>
+        </section>
       </div>
-      <section class="promo">
-        <h2>Печатные платы</h2>
-        <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-        <a class="btn" href="">
-          <span class="promo__btn-text">бесплатная консультация</span>
-          <span class="promo__btn-text">Получить бесплатную консультацию</span>
-        </a>
-      </section>
     </header>
+    <main>
+      <h1>Smart Device умные технологии</h1>
+      <ul class="advantages">
+        <li class="advantages__item">
+          <h3>Оперативные сроки</h3>
+          <p>
+            Усовершенствованная логистическая система позволяет нам просчитывать
+            стоимость, производить и доставлять заказы плат и комплектующих в
+            самые короткие сроки
+          </p>
+        </li>
+        <li class="advantages__item">
+          <h3>Крупные поставщики</h3>
+          <p>
+            Нашими поставщиками являются такие крупные мировые компании как:
+            OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими
+            компаниями обеспичивает хорошее качество нашей продукции.
+          </p>
+        </li>
+        <li class="advantages__item">
+          <h3>Полная конфиденциальность</h3>
+          <p>По желанию клиента мы обеспечиваем полную конфеденциальность.</p>
+        </li>
+        <li class="advantages__item">
+          <h3>Персонализация стоимости</h3>
+          <p>
+            Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы
+            установить ту цену, которая Вас устраивает.
+          </p>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>
