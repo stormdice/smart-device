@@ -1,65 +1,86 @@
 .header {
   background-color: #1b2931;
-  background-image: url("../img/boards@1x-mobile.png"),
-    url("../img/header-background@1x.png");
+  background-image: url("../img/header-background@1x.png");
   background-repeat: no-repeat;
-  background-size: 294px 437px, 1920px 878px;
-  background-position: top 0 right 0, -919px -31px;
+  background-size: 1920px 878px;
+  background-position: -919px -31px;
   color: white;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/boards@2x-mobile.png"),
-      url("../img/header-background@2x.png");
+    background-image: url("../img/header-background@2x.png");
   }
 
   @media (min-width: $tablet-width) {
-    background-size: 330px 466px, 1920px 878px;
-    background-position: top 0 right 0, -521px -46px;
-    background-image: url("../img/boards@1x-tablet.png"),
-      url("../img/header-background@1x.png");
+    background-size: 1920px 878px;
+    background-position: -521px -46px;
+    background-image: url("../img/header-background@1x.png");
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/boards@2x-tablet.png"),
-        url("../img/header-background@2x.png");
+      background-image: url("../img/header-background@2x.png");
     }
   }
 
   @media (min-width: $desktop-width) {
-    padding-bottom: 112px;
-    background-size: 713px 655px, 1920px 878px;
-    background-position: top 0 right -140px, 0 0;
-    background-image: url("../img/boards@1x-desktop.png"),
-      url("../img/header-background@1x.png");
+    padding-bottom: 102px;
+    background-size: 1920px 878px;
+    background-position: 0 0;
+    background-image: url("../img/header-background@1x.png");
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/boards@2x-desktop.png"),
-        url("../img/header-background@2x.png");
+      background-image: url("../img/header-background@2x.png");
     }
   }
 
   @media (min-width: 1600px) {
-    background-position: top 0 right 176px, top center;
+    background-position: top center;
   }
 }
 
 .header__container {
-  max-width: 1422px;
+  position: relative;
+  max-width: 1564px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 17px;
   padding-right: 15px;
   padding-left: 15px;
+  background-image: url("../img/boards@1x-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 294px 437px;
+  background-position: top 0 right 0;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/boards@2x-mobile.png");
+  }
 
   @media (min-width: $tablet-width) {
     padding-top: 20px;
     padding-right: 25px;
     padding-left: 25px;
+    background-size: 330px 466px;
+    background-image: url("../img/boards@1x-tablet.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/boards@2x-tablet.png");
+    }
   }
 
   @media (min-width: $desktop-width) {
     padding-top: 33px;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-bottom: 10px;
+    padding-right: 70px;
+    padding-left: 70px;
+    background-size: 713px 655px;
+    background-position: top 0 right -140px;
+    background-image: url("../img/boards@1x-desktop.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/boards@2x-desktop.png");
+    }
+  }
+
+  @media (min-width: 1600px) {
+    background-position: top 118px right -1px;
   }
 }
 
@@ -149,5 +170,31 @@
   @media (min-width: $desktop-width) {
     display: block;
     margin-right: 3px;
+  }
+}
+
+.header__scroll {
+  display: none;
+  position: absolute;
+  bottom: 24px;
+  left: 36px;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  transform: rotate(-90deg);
+  transition: color 0.3s;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+
+    &:hover,
+    &:focus {
+      color: $color-blue;
+      transition: color 0.3s;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
   }
 }
