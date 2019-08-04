@@ -1,34 +1,22 @@
 .header {
   background-color: #1b2931;
-  background-image: url("../img/header-background@1x.png");
+  background-image: url("../img/header@1x.jpg");
   background-repeat: no-repeat;
   background-size: 1920px 878px;
   background-position: -919px -31px;
   color: white;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/header-background@2x.png");
+    background-image: url("../img/header@2x.jpg");
   }
 
   @media (min-width: $tablet-width) {
-    background-size: 1920px 878px;
     background-position: -521px -46px;
-    background-image: url("../img/header-background@1x.png");
-
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/header-background@2x.png");
-    }
   }
 
   @media (min-width: $desktop-width) {
     padding-bottom: 102px;
-    background-size: 1920px 878px;
     background-position: 0 0;
-    background-image: url("../img/header-background@1x.png");
-
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/header-background@2x.png");
-    }
   }
 
   @media (min-width: 1600px) {

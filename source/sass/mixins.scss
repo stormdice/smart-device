@@ -69,4 +69,18 @@
   color: $color-blue;
   border-color: $color-blue;
   transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+
+  @media (min-width: $desktop-width) {
+    &:hover,
+    &:focus {
+      background-color: $color-blue;
+      color: white;
+      border-color: $color-blue;
+      transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
 }

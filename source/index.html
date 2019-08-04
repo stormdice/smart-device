@@ -60,54 +60,74 @@
             >
           </a>
         </section>
-        <a class="header__scroll" href="#main">Скролл вниз</a>
+        <a class="header__scroll js-scroll-down" href="#">Скролл вниз</a>
       </div>
     </header>
-    <main id="main">
+    <main class="main">
       <h1>Smart Device умные технологии</h1>
-      <ul class="advantages">
-        <li class="advantages__item">
-          <svg width="30" height="37">
-            <use xlink:href="#stopwatch"></use>
-          </svg>
-          <h3>Оперативные сроки</h3>
+      <div class="container">
+        <ul class="advantages">
+          <li class="advantages__item">
+            <svg width="30" height="37">
+              <use xlink:href="#stopwatch"></use>
+            </svg>
+            <h3>Оперативные сроки</h3>
+            <p>
+              Усовершенствованная логистическая система позволяет нам
+              просчитывать стоимость, производить и доставлять заказы плат и
+              комплектующих в самые короткие сроки
+            </p>
+          </li>
+          <li class="advantages__item advantages__item--suppliers">
+            <svg width="32" height="33">
+              <use xlink:href="#hired"></use>
+            </svg>
+            <h3>Крупные поставщики</h3>
+            <p>
+              Нашими поставщиками являются такие крупные мировые компании как:
+              OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими
+              компаниями обеспичивает хорошее качество нашей продукции.
+            </p>
+          </li>
+          <li class="advantages__item advantages__item--confidentiality">
+            <svg width="31" height="27">
+              <use xlink:href="#detective"></use>
+            </svg>
+            <h3>Полная конфиденциальность</h3>
+            <p>
+              По желанию клиента мы обеспечиваем полную конфеденциальность.
+            </p>
+          </li>
+          <li class="advantages__item advantages__item--personalization">
+            <svg width="33" height="33">
+              <use xlink:href="#tag"></use>
+            </svg>
+            <h3>Персонализация стоимости</h3>
+            <p>
+              Мы подбираем определенную фабрику, поставщиков, вид доставки,
+              чтобы установить ту цену, которая Вас устраивает.
+            </p>
+          </li>
+        </ul>
+        <section class="about">
+          <h2>О компании</h2>
           <p>
-            Усовершенствованная логистическая система позволяет нам просчитывать
-            стоимость, производить и доставлять заказы плат и комплектующих в
-            самые короткие сроки
+            Мы поставляем электронные комплектующие, производим печатные платы и
+            предоставляем мировые технологии с 1997 года. Выполняем срочные
+            заказы и пилотные образцы до 10 дней.
           </p>
-        </li>
-        <li class="advantages__item advantages__item--suppliers">
-          <svg width="32" height="33">
-            <use xlink:href="#hired"></use>
-          </svg>
-          <h3>Крупные поставщики</h3>
           <p>
-            Нашими поставщиками являются такие крупные мировые компании как:
-            OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими
-            компаниями обеспичивает хорошее качество нашей продукции.
+            Наши поставщики - мировые производители электронных компонентов:
+            OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие
+            Service Devices применяются на предприятиях Российских Железных
+            Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники.
+            Среди наших клиентов крупнейшие Производители светотехники России.
           </p>
-        </li>
-        <li class="advantages__item advantages__item--confidentiality">
-          <svg width="31" height="27">
-            <use xlink:href="#detective"></use>
-          </svg>
-          <h3>Полная конфиденциальность</h3>
-          <p>
-            По желанию клиента мы обеспечиваем полную конфеденциальность.
-          </p>
-        </li>
-        <li class="advantages__item advantages__item--personalization">
-          <svg width="33" height="33">
-            <use xlink:href="#tag"></use>
-          </svg>
-          <h3>Персонализация стоимости</h3>
-          <p>
-            Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы
-            установить ту цену, которая Вас устраивает.
-          </p>
-        </li>
-      </ul>
+          <a class="btn about__more" href="#">Подробнее</a>
+        </section>
+      </div>
     </main>
+    <script src="js/smoothscroll.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
