@@ -20,6 +20,19 @@
     box-shadow: 0 12px white;
   }
 
+  &:hover,
+  &:focus {
+    &::before {
+      background-color: $color-blue;
+      box-shadow: 0 12px $color-blue;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
   & span {
     @include visually-hidden();
   }
@@ -35,19 +48,6 @@
     &::before {
       top: 9px;
       transition: background-color 0.3s, box-shadow 0.3s;
-    }
-
-    &:hover,
-    &:focus {
-      &::before {
-        background-color: $color-blue;
-        box-shadow: 0 12px $color-blue;
-        transition: background-color 0.3s, box-shadow 0.3s;
-      }
-    }
-
-    &:active {
-      opacity: 0.7;
     }
   }
 }

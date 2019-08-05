@@ -2,7 +2,7 @@
   background-color: $color-dark-blue;
   background-image: url("../img/header@1x.jpg");
   background-repeat: no-repeat;
-  background-size: 1920px 878px;
+  background-size: cover;
   background-position: -919px -31px;
   color: white;
 
@@ -91,12 +91,32 @@
   line-height: 18px;
   outline: none;
 
+  & svg {
+    fill: $color-blue;
+    transition: fill 0.3s;
+  }
+
   & span {
     display: none;
   }
 
   &:nth-last-of-type(2) {
     margin-right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-blue;
+    transition: color 0.3s;
+
+    & svg {
+      fill: white;
+      transition: fill 0.3s;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
   }
 
   @media (min-width: $tablet-width) {
@@ -116,16 +136,6 @@
 
     &:nth-last-of-type(2) {
       margin-right: 49px;
-    }
-
-    &:hover,
-    &:focus {
-      color: $color-blue;
-      transition: color 0.3s;
-    }
-
-    &:active {
-      opacity: 0.7;
     }
 
     &--email {

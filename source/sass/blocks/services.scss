@@ -73,12 +73,12 @@
   background-color: $color-dark-blue;
   background-image: url("../img/production@1x.png");
   background-repeat: no-repeat;
-  background-size: 290px 256px;
+  background-size: cover;
   transition: border-color 0.3s;
 
   &::before {
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     right: -1px;
     content: "";
     width: 63px;
@@ -87,6 +87,16 @@
     background-image: url("../img/arrow-right.svg");
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $color-blue;
+    transition: border-color 0.3s;
+  }
+
+  &:active {
+    opacity: 0.8;
   }
 
   &--installation {
@@ -118,29 +128,19 @@
     background-size: 715px 256px;
 
     &::before {
-      bottom: -3px;
-      right: 2px;
+      bottom: -2px;
+      right: 1px;
     }
 
     &--installation {
       padding-top: 40px;
       background-image: url("../img/installation-tablet@1x.png");
-
-      &::before {
-        bottom: -4px;
-        right: -3px;
-      }
     }
 
     &--components {
       padding-top: 51px;
       padding-right: 505px;
       background-image: url("../img/component-tablet@1x.png");
-
-      &::before {
-        bottom: -5px;
-        right: -3px;
-      }
     }
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -167,22 +167,12 @@
       right: -2px;
     }
 
-    &:hover,
-    &:focus {
-      border-color: $color-blue;
-      transition: border-color 0.3s;
-    }
-
-    &:active {
-      opacity: 0.8;
-    }
-
     &--installation {
       background-image: url("../img/installation-desktop@1x.png");
     }
 
     &--components {
-      background-image: url("../img/componentdesktopt@1x.png");
+      background-image: url("../img/component-desktop@1x.png");
     }
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {

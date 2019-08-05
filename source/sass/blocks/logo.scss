@@ -2,11 +2,9 @@
   display: flex;
   margin-right: auto;
 
-  @media (min-width: $desktop-width) {
-    &:hover .logo__container .logo__text:first-child {
-      color: $color-blue;
-      transition: color 0.3s;
-    }
+  &:hover .logo__container .logo__text:first-child {
+    color: $color-blue;
+    transition: color 0.3s;
   }
 
   @media (min-width: 1145px) {
