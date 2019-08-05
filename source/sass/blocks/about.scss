@@ -39,6 +39,9 @@
 
     & p {
       margin-bottom: 20px;
+      height: 87px;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       &:last-of-type {
         margin-bottom: 43px;
@@ -65,6 +68,7 @@
     }
 
     & p {
+      height: auto;
       margin-bottom: 22px;
       padding-left: 0;
 

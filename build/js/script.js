@@ -1,7 +1,7 @@
 'use strict';
-const link = document.querySelector('.js-scroll-down');
+const linkScrollDown = document.querySelector('.js-scroll-down');
 
-link.addEventListener('click', function(evt) {
+linkScrollDown.addEventListener('click', function(evt) {
   evt.preventDefault();
-  window.scroll({ top: 2500, left: 0, behavior: 'smooth' });
+  window.scroll({ top: 900, left: 0, behavior: 'smooth' });
 });
