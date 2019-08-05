@@ -21,6 +21,24 @@
   font-family: $font-alt;
 }
 
+@mixin title-h2($margin-bottom: 0) {
+  margin-top: 0;
+  margin-bottom: $margin-bottom;
+  font-family: $font-alt;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140%;
+
+  @media (min-width: $tablet-width) {
+    font-size: 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 36px;
+    line-height: 51px;
+  }
+}
+
 @mixin reset-btn {
   padding: 0;
   border: none;

@@ -1,0 +1,200 @@
+.services {
+  padding-top: 52px;
+  padding-bottom: 67px;
+  background-color: $color-dark-blue;
+  color: white;
+
+  & h2 {
+    @include title-h2(38px);
+
+    padding-left: 10px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 50px;
+    padding-bottom: 81px;
+
+    & h2 {
+      margin-bottom: 49px;
+      padding-left: 0;
+      padding-right: 100px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 89px;
+    padding-bottom: 130px;
+  }
+}
+
+.services__list {
+  @include list();
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+.services__item {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: calc(100% / 3 - 20px);
+    margin-right: 30px;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.services__link {
+  display: block;
+  position: relative;
+  padding: 22px 100px 23px 35px;
+  height: 256px;
+  font-family: $font-alt;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: white;
+  border: 2px solid transparent;
+  background-color: $color-dark-blue;
+  background-image: url("../img/production@1x.png");
+  background-repeat: no-repeat;
+  background-size: 290px 256px;
+  transition: border-color 0.3s;
+
+  &::before {
+    position: absolute;
+    bottom: -5px;
+    right: -1px;
+    content: "";
+    width: 63px;
+    height: 63px;
+    background-color: $color-blue;
+    background-image: url("../img/arrow-right.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--installation {
+    background-image: url("../img/installation@1x.png");
+  }
+
+  &--components {
+    padding-top: 32px;
+    background-image: url("../img/component@1x.png");
+  }
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/production@2x.png");
+
+    &--installation {
+      background-image: url("../img/installation@2x.png");
+    }
+
+    &--components {
+      background-image: url("../img/component@2x.png");
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 39px;
+    padding-left: 43px;
+    padding-right: 485px;
+    background-image: url("../img/production-tablet@1x.png");
+    background-size: 715px 256px;
+
+    &::before {
+      bottom: -3px;
+      right: 2px;
+    }
+
+    &--installation {
+      padding-top: 40px;
+      background-image: url("../img/installation-tablet@1x.png");
+
+      &::before {
+        bottom: -4px;
+        right: -3px;
+      }
+    }
+
+    &--components {
+      padding-top: 51px;
+      padding-right: 505px;
+      background-image: url("../img/component-tablet@1x.png");
+
+      &::before {
+        bottom: -5px;
+        right: -3px;
+      }
+    }
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/production-tablet@2x.png");
+
+      &--installation {
+        background-image: url("../img/installation-tablet@2x.png");
+      }
+
+      &--components {
+        background-image: url("../img/component-tablet@2x.png");
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 620px;
+    padding: 50px 152px 50px 42px;
+    background-image: url("../img/production-desktop@1x.png");
+    background-size: 370px 620px;
+
+    &::before {
+      bottom: -2px;
+      right: -2px;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $color-blue;
+      transition: border-color 0.3s;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+
+    &--installation {
+      background-image: url("../img/installation-desktop@1x.png");
+    }
+
+    &--components {
+      background-image: url("../img/componentdesktopt@1x.png");
+    }
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/production-desktop@2x.png");
+
+      &--installation {
+        background-image: url("../img/installation-desktop@2x.png");
+      }
+
+      &--components {
+        background-image: url("../img/component-desktop@2x.png");
+      }
+    }
+  }
+}

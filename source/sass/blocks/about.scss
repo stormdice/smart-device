@@ -2,21 +2,19 @@
   padding-bottom: 64px;
 
   & h2 {
-    margin-top: 0;
-    margin-bottom: 21px;
-    font-family: $font-alt;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 140%;
+    @include title-h2(21px);
   }
 
   & p {
     margin-top: 0;
     margin-bottom: 41px;
     padding-left: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:last-of-type {
       margin-bottom: 31px;
+      height: 174px;
     }
   }
 
@@ -34,16 +32,13 @@
 
     & h2 {
       margin-bottom: 26px;
-      font-size: 32px;
     }
 
     & p {
       margin-bottom: 20px;
-      height: 87px;
-      overflow: hidden;
-      text-overflow: ellipsis;
 
       &:last-of-type {
+        height: 87px;
         margin-bottom: 43px;
       }
     }
@@ -63,8 +58,6 @@
 
     & h2 {
       margin-bottom: 20px;
-      font-size: 36px;
-      line-height: 51px;
     }
 
     & p {
