@@ -1,0 +1,168 @@
+.form {
+  width: 570px;
+  margin-left: auto;
+
+  & h2 {
+    @include title-h2(9px);
+  }
+
+  & p {
+    margin-top: 0;
+    margin-bottom: 51px;
+  }
+
+  @media (max-width: $desktop-width) {
+    margin-right: auto;
+    width: 590px;
+
+    & h2 {
+      margin-bottom: 17px;
+    }
+
+    & p {
+      margin-bottom: 53px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+
+    & h2 {
+      margin-bottom: 13px;
+    }
+
+    & p {
+      margin-bottom: 26px;
+    }
+  }
+}
+
+.form__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  @media (max-width: $tablet-width) {
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+
+.form__input {
+  @include input();
+
+  width: calc(50% - 15px);
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    margin-bottom: 31px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__question {
+  @include input();
+
+  width: 100%;
+  min-height: 161px;
+  margin-bottom: 36px;
+  resize: none;
+
+  @media (max-width: $desktop-width) {
+    margin-bottom: 41px;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 104px;
+    margin-bottom: 25px;
+  }
+}
+
+.form__ask-question {
+  width: calc(50% - 15px);
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    max-width: 292px;
+    margin-bottom: 23px;
+  }
+}
+
+.form__data-processing {
+  width: 261px;
+  padding-top: 8px;
+
+  & input {
+    @include visually-hidden();
+  }
+
+  & input:checked + .form__data-processing-text {
+    &::after {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      content: "";
+      width: 7px;
+      height: 5px;
+      background-color: transparent;
+      border-left: 1px solid white;
+      border-bottom: 1px solid white;
+      transform: rotate(320deg);
+    }
+  }
+
+  & input:hover + .form__data-processing-text,
+  & input:focus + .form__data-processing-text {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  @media (max-width: $desktop-width) {
+    width: 268px;
+  }
+
+  @media (max-width: $tablet-width) {
+    & input:checked + .form__data-processing-text {
+      &::after {
+        top: 5px;
+        left: 5px;
+      }
+    }
+  }
+}
+
+.form__data-processing-text {
+  display: block;
+  position: relative;
+  padding-left: 31px;
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0.8;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.3s;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 1px solid white;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-left: 35px;
+
+    &::before {
+      width: 17px;
+      height: 17px;
+    }
+  }
+}

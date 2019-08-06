@@ -151,6 +151,50 @@
         </div>
       </section>
     </main>
+    <footer class="footer">
+      <section class="footer__form">
+        <div class="container">
+          <form class="form" action="#">
+            <h2>Остались вопросы? Задайте их нам!</h2>
+            <p>Мы проконсультируем Вас бесплатно</p>
+            <div class="form__container">
+              <input
+                class="form__input"
+                type="text"
+                name="name"
+                minlength="3"
+                maxlength="256"
+                placeholder="Имя"
+              />
+              <input
+                class="form__input"
+                type="tel"
+                name="tel"
+                placeholder="Телефон"
+              />
+            </div>
+            <textarea
+              class="form__question"
+              name="question"
+              placeholder="Ваш вопрос"
+            ></textarea>
+            <div class="form__container">
+              <button class="btn form__ask-question" type="submit">
+                Задать вопрос
+              </button>
+              <div class="form__data-processing">
+                <input id="personal-data-processing" type="checkbox" checked />
+                <label
+                  class="form__data-processing-text"
+                  for="personal-data-processing"
+                  >Я согласен на обработку персональных данных</label
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </footer>
     <script src="js/smoothscroll.min.js"></script>
     <script src="js/script.js"></script>
   </body>

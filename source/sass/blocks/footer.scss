@@ -1,0 +1,33 @@
+.footer__form {
+  padding-top: 92px;
+  padding-bottom: 73px;
+  color: white;
+  background-color: $color-blue;
+  background-image: url("../img/airplane@1x.png");
+  background-repeat: no-repeat;
+  background-size: 686px 641px;
+  background-position: top -60px left 175px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/airplane@2x.png");
+  }
+
+  @media (max-width: 1900px) {
+    background-position: top -60px left 0;
+  }
+
+  @media (max-width: 1400px) {
+    background-image: none;
+  }
+
+  @media (max-width: $desktop-width) {
+    padding-top: 80px;
+    padding-bottom: 64px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-top: 31px;
+    padding-bottom: 13px;
+    background-image: none;
+  }
+}
