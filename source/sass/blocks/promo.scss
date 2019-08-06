@@ -1,51 +1,25 @@
 .promo {
-  padding-top: 210px;
-  padding-bottom: 70px;
-
-  @media (min-width: $tablet-width) {
-    width: 470px;
-    padding-top: 95px;
-    padding-bottom: 163px;
-    padding-left: 63px;
-  }
-
-  @media (min-width: $desktop-width) {
-    width: 500px;
-    padding-top: 209px;
-    padding-left: 0;
-  }
-
-  @media (min-width: 1300px) {
-    width: 718px;
-  }
+  width: 718px;
+  padding-top: 209px;
+  padding-bottom: 163px;
+  padding-left: 0;
 
   & h2 {
-    @include title(27px);
+    @include title(28px);
     font-weight: 700;
-    font-size: 40px;
-    line-height: 47px;
+    font-size: 80px;
+    line-height: 94px;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-
-    @media (min-width: $tablet-width) {
-      margin-bottom: 30px;
-      font-size: 60px;
-      line-height: 70px;
-    }
-
-    @media (min-width: $desktop-width) {
-      margin-bottom: 28px;
-      font-size: 80px;
-      line-height: 94px;
-    }
   }
 
   & p {
     position: relative;
     margin-top: 0;
-    margin-bottom: 42px;
-    padding-left: 51px;
-    line-height: 156%;
+    margin-bottom: 43px;
+    padding-left: 98px;
+    font-size: 22px;
+    line-height: 34px;
 
     &::before {
       position: absolute;
@@ -53,36 +27,62 @@
       left: 3px;
       content: "";
       background-color: white;
-      width: 33px;
+      width: 67px;
       height: 2px;
     }
+  }
 
-    @media (min-width: $tablet-width) {
+  @media (max-width: 1300px) {
+    width: 500px;
+  }
+
+  @media (max-width: $desktop-width) {
+    width: 470px;
+    padding-top: 95px;
+    padding-left: 63px;
+
+    & h2 {
+      margin-bottom: 30px;
+      font-size: 60px;
+      line-height: 70px;
+    }
+
+    & p {
       margin-bottom: 55px;
+      padding-left: 51px;
       font-size: 18px;
+      line-height: 156%;
 
       &::before {
         top: 16px;
+        width: 33px;
       }
     }
+  }
 
-    @media (min-width: $desktop-width) {
-      margin-bottom: 43px;
-      padding-left: 98px;
-      font-size: 22px;
-      line-height: 34px;
+  @media (max-width: $tablet-width) {
+    width: auto;
+    padding-top: 210px;
+    padding-bottom: 70px;
+    padding-left: 0;
 
-      &::before {
-        width: 67px;
-      }
+    & h2 {
+      margin-bottom: 27px;
+      font-size: 40px;
+      line-height: 47px;
+    }
+
+    & p {
+      font-size: 16px;
+      margin-bottom: 42px;
     }
   }
 }
 
 .promo__consultation {
   width: 100%;
-  max-width: 379px;
-  margin-left: 3px;
+  max-width: 407px;
+  margin-left: 98px;
   padding-top: 17px;
   padding-bottom: 17px;
   padding-right: 0;
@@ -93,28 +93,28 @@
   background-color: $color-blue;
   border-color: $color-blue;
 
-  @media (min-width: $tablet-width) {
+  @media (max-width: $desktop-width) {
+    max-width: 379px;
     margin-left: 51px;
   }
 
-  @media (min-width: $desktop-width) {
-    max-width: 407px;
-    margin-left: 98px;
+  @media (max-width: $tablet-width) {
+    margin-left: 3px;
   }
 }
 
 .promo__consultation-text {
-  &:last-child {
+  &:first-child {
     display: none;
   }
 
-  @media (min-width: $tablet-width) {
+  @media (max-width: $tablet-width) {
     &:first-child {
-      display: none;
+      display: block;
     }
 
     &:last-child {
-      display: block;
+      display: none;
     }
   }
 }

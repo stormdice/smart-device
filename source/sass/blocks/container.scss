@@ -1,13 +1,16 @@
 .container {
   @include container();
 
-  @media (min-width: $tablet-width) {
+  max-width: 1220px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (max-width: $desktop-width) {
     max-width: 770px;
-    margin-right: auto;
-    margin-left: auto;
   }
 
-  @media (min-width: $desktop-width) {
-    max-width: 1220px;
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+    margin-left: 0;
   }
 }

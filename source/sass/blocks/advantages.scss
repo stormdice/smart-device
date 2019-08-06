@@ -1,32 +1,38 @@
 .advantages {
-  @include list();
+  @include list(76px);
 
-  padding-top: 37px;
-  margin-bottom: 57px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding-top: 113px;
 
-  @media (min-width: $tablet-width) {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+  @media (max-width: $desktop-width) {
     padding-top: 53px;
     margin-bottom: 25px;
   }
 
-  @media (min-width: $desktop-width) {
-    margin-bottom: 76px;
-    padding-top: 113px;
+  @media (max-width: $tablet-width) {
+    padding-top: 37px;
+    margin-bottom: 57px;
   }
 }
 
 .advantages__item {
-  margin-bottom: 20px;
-  padding: 22px 15px 24px 25px;
+  width: calc(50% - 15px);
+  min-height: 299px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  padding: 38px 42px;
   background-color: white;
   border-top: 1px solid $color-gray;
   border-right: 1px solid $color-gray;
   border-bottom: 1px solid $color-gray;
   border-left: 2px solid $color-blue;
   transition: background-color 0.3s, color 0.3s;
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -50,12 +56,12 @@
 
   & svg {
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 19px;
     fill: $color-blue;
     transition: fill 0.3s;
 
-    @media (min-width: $tablet-width) {
-      margin-bottom: 7px;
+    @media (max-width: $tablet-width) {
+      margin-bottom: 12px;
     }
   }
 
@@ -64,8 +70,8 @@
     margin-bottom: 10px;
     font-family: $font-alt;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 140%;
+    font-size: 24px;
+    line-height: 34px;
     color: $color-blue;
     transition: color 0.3s;
   }
@@ -75,49 +81,31 @@
     margin-bottom: 0;
   }
 
-  &--suppliers {
-    padding-right: 10px;
-    padding-bottom: 26px;
-
-    & svg {
-      margin-bottom: 17px;
-    }
-  }
-
   &--confidentiality {
-    min-height: 232px;
-    padding-top: 25px;
-    padding-right: 18px;
+    padding-top: 43px;
   }
 
-  &--personalization {
-    margin-bottom: 12px;
-    padding-top: 22px;
-    padding-left: 26px;
-    padding-bottom: 28px;
-  }
-
-  @media (min-width: $tablet-width) {
+  @media (max-width: $desktop-width) {
     width: 345px;
     min-height: 307px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    padding-right: 20px;
+    padding: 22px 20px 14px 25px;
 
-    & h3 {
-      font-size: 24px;
-      line-height: 34px;
+    & svg {
+      margin-bottom: 12px;
     }
 
-    &:nth-child(2n) {
-      margin-right: 0;
+    &--terms {
+      & svg {
+        width: 30px;
+        height: 37px;
+        margin-bottom: 7px;
+      }
     }
 
     &--suppliers {
-      padding-bottom: 21px;
-
       & svg {
-        margin-bottom: 11px;
+        width: 32px;
+        height: 33px;
       }
     }
 
@@ -129,7 +117,9 @@
       }
 
       & svg {
-        margin-bottom: 8px;
+        width: 33px;
+        height: 33px;
+        margin-bottom: 16px;
       }
     }
 
@@ -137,7 +127,9 @@
       min-height: 232px;
 
       & svg {
-        margin-bottom: 11px;
+        width: 33px;
+        height: 33px;
+        margin-bottom: 7px;
       }
 
       h3 {
@@ -146,46 +138,32 @@
     }
   }
 
-  @media (min-width: $desktop-width) {
-    width: calc(50% - 15px);
-    min-height: 299px;
-    padding-top: 38px;
-    padding-right: 42px;
-    padding-left: 42px;
-    cursor: pointer;
+  @media (max-width: $tablet-width) {
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
 
     & svg {
-      margin-bottom: 19px;
+      margin-bottom: 12px;
     }
 
-    & h3 {
-      margin-bottom: 16px;
+    h3 {
+      font-size: 20px;
+      line-height: 140%;
     }
 
     &--suppliers {
-      padding-left: 43px;
+      padding-right: 14px;
 
       & svg {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 21px;
+        margin-bottom: 16px;
       }
     }
 
     &--personalization {
       & svg {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 21px;
-      }
-    }
-
-    &--confidentiality {
-      padding-top: 44px;
-
-      & svg {
-        width: 36px;
-        height: 31px;
+        margin-bottom: 15px;
       }
     }
   }
