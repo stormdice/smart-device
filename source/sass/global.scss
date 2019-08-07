@@ -31,6 +31,6 @@ img {
   height: auto;
 }
 
-h1 {
+.visually-hidden {
   @include visually-hidden();
 }

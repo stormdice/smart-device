@@ -1,0 +1,27 @@
+.social {
+  display: flex;
+  justify-content: space-between;
+  width: 112px;
+
+  a {
+    display: block;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      & svg {
+        fill: $color-blue;
+        transition: fill 0.3s;
+      }
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+.social__icon {
+  fill: $color-gray-1;
+  transition: fill 0.3s;
+}

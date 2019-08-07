@@ -128,3 +128,19 @@
     padding-right: 15px;
   }
 }
+
+@mixin link-gray {
+  color: rgba(27, 45, 55, 0.5);
+  transition: color 0.3s;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: $color-dark-blue-3;
+    transition: color 0.3s;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}

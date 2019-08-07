@@ -7,8 +7,26 @@
     transition: color 0.3s;
   }
 
+  &--footer {
+    margin-bottom: 53px;
+    margin-right: 0;
+  }
+
   @media (max-width: 1200px) {
     margin-right: auto;
+  }
+
+  @media (max-width: $desktop-width) {
+    &--footer {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    &--footer {
+      margin-bottom: 25px;
+    }
   }
 }
 
@@ -20,7 +38,11 @@
   @media (max-width: $tablet-width) {
     width: 38px;
     height: 38px;
-    margin-right: 0;
+
+    &--footer {
+      width: 52px;
+      height: 52px;
+    }
   }
 }
 
@@ -31,8 +53,14 @@
     display: block;
   }
 
+  &--footer {
+    padding-top: 4px;
+  }
+
   @media (max-width: $tablet-width) {
-    display: none;
+    &--header {
+      display: none;
+    }
   }
 }
 
@@ -46,4 +74,9 @@
   font-size: 25px;
   line-height: 25px;
   color: white;
+
+  &--footer {
+    line-height: 29px;
+    color: $color-dark-blue-2;
+  }
 }

@@ -1,4 +1,5 @@
 'use strict';
+
 const linkScrollDown = document.querySelector('.js-scroll-down');
 
 linkScrollDown.addEventListener('click', function(evt) {
