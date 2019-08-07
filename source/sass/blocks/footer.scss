@@ -1,7 +1,7 @@
 .footer__form {
   position: relative;
   padding-top: 92px;
-  padding-bottom: 69px;
+  padding-bottom: 114px;
   color: white;
   background-color: $color-blue;
   background-image: url("../img/airplane@1x.png"),
@@ -24,12 +24,12 @@
 
   @media (max-width: $desktop-width) {
     padding-top: 80px;
-    padding-bottom: 64px;
+    padding-bottom: 103px;
   }
 
   @media (max-width: $tablet-width) {
     padding-top: 31px;
-    padding-bottom: 13px;
+    padding-bottom: 44px;
     background-image: none;
   }
 }
@@ -83,7 +83,7 @@
 
   @media (max-width: $tablet-width) {
     flex-direction: column;
-    margin-bottom: 49px;
+    margin-bottom: 39px;
 
     & p {
       margin-bottom: 31px;
@@ -99,7 +99,7 @@
   max-width: 1466px;
 
   &--content {
-    margin-bottom: 59px;
+    margin-bottom: 52px;
   }
 
   &--copyright {
@@ -127,6 +127,7 @@
 
     &--copyright {
       padding-top: 21px;
+      padding-bottom: 21px;
       margin-bottom: 0;
     }
   }
@@ -188,6 +189,12 @@
     border-top: 1px solid rgba(98, 105, 98, 0.2);
     overflow: hidden;
     transition: max-height 0.5s;
+
+    &:nth-child(2) {
+      & h3 {
+        margin-bottom: 30px;
+      }
+    }
 
     &::before {
       position: absolute;
