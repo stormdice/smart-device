@@ -1,13 +1,21 @@
 .modal {
+  display: none;
   position: fixed;
   top: 136px;
   left: 50%;
+  max-height: 605px;
   transform: translate(-50%);
+  z-index: 2;
+  overflow: auto;
 
   @media (max-width: $tablet-width) {
     top: 0;
     left: 0;
     transform: none;
+  }
+
+  &--show {
+    display: block;
   }
 }
 
@@ -54,4 +62,9 @@
     border-color: white;
     transition: border-color 0.3s;
   }
+}
+
+.modal-open {
+  height: 100vh;
+  overflow-y: hidden;
 }
