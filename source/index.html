@@ -155,29 +155,38 @@
       <section class="footer__form">
         <div class="container">
           <form class="form" action="#">
-            <h2>Остались вопросы? Задайте их нам!</h2>
-            <p>Мы проконсультируем Вас бесплатно</p>
+            <h2 class="form__title">Остались вопросы? Задайте их нам!</h2>
+            <p class="form__text">Мы проконсультируем Вас бесплатно</p>
             <div class="form__container">
-              <input
-                class="form__input form__input--layout"
-                type="text"
-                name="name"
-                minlength="3"
-                maxlength="256"
-                placeholder="Имя"
-              />
-              <input
-                class="form__input form__input--layout"
-                type="tel"
-                name="tel"
-                placeholder="Телефон"
-              />
+              <label class="form__label form__label--small">
+                <span class="visually-hidden">Имя</span>
+                <input
+                  class="form__input"
+                  type="text"
+                  name="name"
+                  minlength="3"
+                  maxlength="256"
+                  placeholder="Имя"
+                />
+              </label>
+              <label class="form__label form__label--small">
+                <span class="visually-hidden">Имя</span>
+                <input
+                  class="form__input"
+                  type="tel"
+                  name="tel"
+                  placeholder="Телефон"
+                />
+              </label>
             </div>
-            <textarea
-              class="form__question"
-              name="question"
-              placeholder="Ваш вопрос"
-            ></textarea>
+            <label class="form__label">
+              <span class="visually-hidden">Имя</span>
+              <textarea
+                class="form__question"
+                name="question"
+                placeholder="Ваш вопрос"
+              ></textarea>
+            </label>
             <div class="form__container">
               <button class="btn form__ask-question" type="submit">
                 Задать вопрос
@@ -300,6 +309,68 @@
         </div>
       </div>
     </footer>
+    <div class="modal">
+      <form class="form form--modal" action="#">
+        <h2 class="form__title form__title--modal">Закажите звонок</h2>
+        <p class="form__text form__text--modal">
+          Оставьте контакты, мы проконсультируем<br />
+          вас бесплатно в удобное время
+        </p>
+        <button
+          class="modal__close"
+          type="button"
+          aria-label="закрыть"
+        ></button>
+        <div class="form__container form__container--modal">
+          <label class="form__label form__label--modal">
+            <span class="visually-hidden">Имя</span>
+            <input
+              class="form__input form__input--modal"
+              type="text"
+              name="name"
+              minlength="3"
+              maxlength="256"
+              placeholder="Имя"
+            />
+          </label>
+          <label class="form__label form__label--modal">
+            <span class="visually-hidden">Имя</span>
+            <input
+              class="form__input form__input--modal"
+              type="tel"
+              name="tel"
+              placeholder="Телефон"
+            />
+          </label>
+        </div>
+        <label class="form__label form__label--modal-question">
+          <span class="visually-hidden">Имя</span>
+          <textarea
+            class="form__question form__question--modal"
+            name="question"
+            placeholder="Ваш вопрос"
+          ></textarea>
+        </label>
+        <button
+          class="btn form__ask-question form__ask-question--modal"
+          type="submit"
+        >
+          отправить
+        </button>
+        <div class="form__data-processing form__data-processing--modal">
+          <input
+            id="backcall-personal-data-processing"
+            type="checkbox"
+            checked
+          />
+          <label
+            class="form__data-processing-text form__data-processing-text--modal"
+            for="backcall-personal-data-processing"
+            >Я согласен на обработку персональных данных</label
+          >
+        </div>
+      </form>
+    </div>
     <script src="js/vendor/smoothscroll.min.js"></script>
     <script src="js/script.js"></script>
   </body>

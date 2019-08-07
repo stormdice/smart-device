@@ -1,0 +1,57 @@
+.modal {
+  position: fixed;
+  top: 136px;
+  left: 50%;
+  transform: translate(-50%);
+
+  @media (max-width: $tablet-width) {
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  padding: 0;
+  width: 23px;
+  height: 23px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  outline: none;
+
+  &::before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transform: rotate(45deg);
+    border-radius: 10px;
+  }
+
+  &::after {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transform: rotate(-45deg);
+    border-radius: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: white;
+    transition: border-color 0.3s;
+  }
+}

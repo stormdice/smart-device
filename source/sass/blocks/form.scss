@@ -1,39 +1,63 @@
 .form {
   width: 570px;
   margin-left: auto;
+  background-color: $color-blue;
+  color: white;
 
-  & h2 {
-    @include title-h2(9px);
-  }
-
-  & p {
-    margin-top: 0;
-    margin-bottom: 51px;
+  &--modal {
+    width: 490px;
+    padding: 30px 40px;
   }
 
   @media (max-width: $desktop-width) {
     margin-right: auto;
     width: 590px;
-
-    & h2 {
-      margin-bottom: 17px;
-    }
-
-    & p {
-      margin-bottom: 53px;
-    }
   }
 
   @media (max-width: $tablet-width) {
     width: 100%;
 
-    & h2 {
-      margin-bottom: 13px;
+    &--modal {
+      width: 100vw;
+      height: 100vh;
+      padding-right: 15px;
+      padding-left: 15px;
     }
+  }
+}
 
-    & p {
-      margin-bottom: 26px;
-    }
+.form__title {
+  @include title-h2(9px);
+
+  &--modal {
+    font-size: 28px;
+    line-height: 140%;
+    margin-bottom: 13px;
+  }
+
+  @media (max-width: $desktop-width) {
+    margin-bottom: 17px;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 13px;
+  }
+}
+
+.form__text {
+  margin-top: 0;
+  margin-bottom: 51px;
+
+  &--modal {
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: $desktop-width) {
+    margin-bottom: 53px;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 26px;
   }
 }
 
@@ -42,27 +66,43 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
+  &--modal {
+    display: block;
+  }
+
   @media (max-width: $tablet-width) {
     display: block;
+  }
+}
+
+.form__label {
+  display: block;
+  width: 100%;
+  margin-bottom: 40px;
+
+  &--modal {
+    margin-bottom: 30px;
+  }
+
+  &--modal-question {
+    margin-bottom: 24px;
+  }
+
+  &--small {
+    width: calc(50% - 15px);
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
 
 .form__input {
   @include input();
 
-  width: calc(50% - 15px);
-
-  &--layout {
-    margin-bottom: 40px;
-  }
-
-  @media (max-width: $tablet-width) {
-    width: 100%;
-    margin-bottom: 31px;
-
-    &--layout {
-      margin-bottom: 30px;
-    }
+  &--modal {
+    padding: 12px 24px 16px 24px;
   }
 }
 
@@ -71,22 +111,29 @@
 
   width: 100%;
   min-height: 156px;
-  margin-bottom: 36px;
   resize: none;
+
+  &--modal {
+    min-height: 105px;
+    padding: 12px 23px 16px 23px;
+  }
 
   @media (max-width: $desktop-width) {
     min-height: 161px;
-    margin-bottom: 41px;
   }
 
   @media (max-width: $tablet-width) {
     min-height: 104px;
-    margin-bottom: 25px;
   }
 }
 
 .form__ask-question {
   width: calc(50% - 15px);
+
+  &--modal {
+    width: 100%;
+    margin-bottom: 35px;
+  }
 
   @media (max-width: $tablet-width) {
     width: 100%;
@@ -98,6 +145,11 @@
 .form__data-processing {
   width: 261px;
   padding-top: 8px;
+
+  &--modal {
+    width: 370px;
+    padding-top: 0;
+  }
 
   & input {
     @include visually-hidden();
@@ -148,6 +200,10 @@
   cursor: pointer;
   user-select: none;
   transition: opacity 0.3s;
+
+  &--modal {
+    padding-left: 48px;
+  }
 
   &::before {
     position: absolute;
