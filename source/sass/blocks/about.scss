@@ -28,6 +28,7 @@
 
   @media (max-width: $desktop-width) {
     padding-bottom: 83px;
+    padding-right: 0;
     padding-left: 185px;
     background-image: url("../img/2005-tablet@1x.jpg");
     background-size: 136px 362px;
@@ -43,6 +44,7 @@
 
     & p {
       margin-bottom: 20px;
+      padding-right: 10px;
       padding-left: 3px;
 
       &:last-of-type {
@@ -64,6 +66,7 @@
 
     & p {
       margin-bottom: 41px;
+      padding-right: 0;
       padding-left: 3px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -72,6 +75,28 @@
         margin-bottom: 31px;
         height: 174px;
       }
+    }
+  }
+}
+
+.about__text-hidden {
+  @media (max-width: $desktop-width) {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      right: 4px;
+      content: "..";
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    &::before {
+      right: 0;
+      width: 155px;
+      height: 21px;
+      background-color: white;
     }
   }
 }

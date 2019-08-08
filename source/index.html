@@ -118,7 +118,7 @@
             предоставляем мировые технологии с 1997 года. Выполняем срочные
             заказы и пилотные образцы до 10 дней.
           </p>
-          <p>
+          <p class="about__text-hidden">
             Наши поставщики - мировые производители электронных компонентов:
             OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие
             Service Devices применяются на предприятиях Российских Железных
@@ -161,26 +161,25 @@
               <label class="form__label form__label--small">
                 <span class="visually-hidden">Имя</span>
                 <input
-                  class="form__input"
+                  class="form__input js-text-only"
                   type="text"
                   name="name"
                   minlength="3"
                   maxlength="256"
                   placeholder="Имя"
-                  pattern="[A-Za-zА-Яа-яЁё]"
                 />
               </label>
               <label class="form__label form__label--small">
                 <span class="visually-hidden">Телефон</span>
                 <input
-                  class="form__input"
+                  class="form__input js-tel-only"
                   type="tel"
                   name="tel"
                   placeholder="Телефон"
                 />
               </label>
             </div>
-            <label class="form__label">
+            <label class="form__label form__label--textarea">
               <span class="visually-hidden">Задать вопрос</span>
               <textarea
                 class="form__question"
@@ -326,19 +325,18 @@
           <label class="form__label form__label--modal">
             <span class="visually-hidden">Имя</span>
             <input
-              class="form__input form__input--modal"
+              class="form__input form__input--modal js-text-only"
               type="text"
               name="name"
               minlength="3"
               maxlength="256"
               placeholder="Имя"
-              pattern="[A-Za-zА-Яа-яЁё]"
             />
           </label>
           <label class="form__label form__label--modal">
             <span class="visually-hidden">Телефон</span>
             <input
-              class="form__input form__input--modal"
+              class="form__input form__input--modal js-tel-only"
               type="tel"
               name="tel"
               placeholder="Телефон"
@@ -373,6 +371,8 @@
         </div>
       </form>
     </div>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/jquery.inputmask.min.js"></script>
     <script src="js/vendor/smoothscroll.min.js"></script>
     <script src="js/vendor/polyfill-ie11-nodelist-foreach.js"></script>
     <script src="js/script.js"></script>
