@@ -141,15 +141,15 @@
             <div class="form__container">
               <label class="form__label form__label--small">
                 <span class="visually-hidden">Имя</span>
-                <input class="form__input" type="text" name="name" minlength="3" maxlength="256" placeholder="Имя">
+                <input class="form__input" type="text" name="name" minlength="3" maxlength="256" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]">
               </label>
               <label class="form__label form__label--small">
-                <span class="visually-hidden">Имя</span>
+                <span class="visually-hidden">Телефон</span>
                 <input class="form__input" type="tel" name="tel" placeholder="Телефон">
               </label>
             </div>
             <label class="form__label">
-              <span class="visually-hidden">Имя</span>
+              <span class="visually-hidden">Задать вопрос</span>
               <textarea class="form__question" name="question" placeholder="Ваш вопрос"></textarea>
             </label>
             <div class="form__container">
@@ -167,7 +167,7 @@
       <div class="footer__bottom">
         <div class="container footer__container footer__container--content">
           <div class="footer__socials">
-            <a class="logo logo--footer">
+            <a class="logo logo--footer" href="#">
               <img class="logo__img logo__img--footer" src="img/content/logo.svg" alt="логотип Smart Device">
               <div class="logo__container logo__container--footer">
                 <span class="logo__text logo__text--footer">Service Device</span>
@@ -246,15 +246,15 @@
         <div class="form__container form__container--modal">
           <label class="form__label form__label--modal">
             <span class="visually-hidden">Имя</span>
-            <input class="form__input form__input--modal" type="text" name="name" minlength="3" maxlength="256" placeholder="Имя">
+            <input class="form__input form__input--modal" type="text" name="name" minlength="3" maxlength="256" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]">
           </label>
           <label class="form__label form__label--modal">
-            <span class="visually-hidden">Имя</span>
+            <span class="visually-hidden">Телефон</span>
             <input class="form__input form__input--modal" type="tel" name="tel" placeholder="Телефон">
           </label>
         </div>
         <label class="form__label form__label--modal-question">
-          <span class="visually-hidden">Имя</span>
+          <span class="visually-hidden">Ваш вопрос</span>
           <textarea class="form__question form__question--modal" name="question" placeholder="Ваш вопрос"></textarea>
         </label>
         <button class="btn form__ask-question form__ask-question--modal" type="submit">
@@ -267,6 +267,7 @@
       </form>
     </div>
     <script src="js/vendor/smoothscroll.min.js"></script>
+    <script src="js/vendor/polyfill-ie11-nodelist-foreach.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

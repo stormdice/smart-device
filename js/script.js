@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  var tabletWidth = 770;
+  var tabletWidth = 768;
 
   if (screen.width < tabletWidth) {
     var footerContentList = document.querySelectorAll('.js-footer-list');
@@ -20,7 +20,7 @@
   linkScrollDown.addEventListener('click', function (evt) {
     evt.preventDefault();
     window.scroll({
-      top: 900,
+      top: 975,
       left: 0,
       behavior: 'smooth'
     });
