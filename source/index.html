@@ -167,10 +167,11 @@
                   minlength="3"
                   maxlength="256"
                   placeholder="Имя"
+                  pattern="[A-Za-zА-Яа-яЁё]"
                 />
               </label>
               <label class="form__label form__label--small">
-                <span class="visually-hidden">Имя</span>
+                <span class="visually-hidden">Телефон</span>
                 <input
                   class="form__input"
                   type="tel"
@@ -180,7 +181,7 @@
               </label>
             </div>
             <label class="form__label">
-              <span class="visually-hidden">Имя</span>
+              <span class="visually-hidden">Задать вопрос</span>
               <textarea
                 class="form__question"
                 name="question"
@@ -206,7 +207,7 @@
       <div class="footer__bottom">
         <div class="container footer__container footer__container--content">
           <div class="footer__socials">
-            <a class="logo logo--footer">
+            <a class="logo logo--footer" href="#">
               <img
                 class="logo__img logo__img--footer"
                 src="img/content/logo.svg"
@@ -331,10 +332,11 @@
               minlength="3"
               maxlength="256"
               placeholder="Имя"
+              pattern="[A-Za-zА-Яа-яЁё]"
             />
           </label>
           <label class="form__label form__label--modal">
-            <span class="visually-hidden">Имя</span>
+            <span class="visually-hidden">Телефон</span>
             <input
               class="form__input form__input--modal"
               type="tel"
@@ -344,7 +346,7 @@
           </label>
         </div>
         <label class="form__label form__label--modal-question">
-          <span class="visually-hidden">Имя</span>
+          <span class="visually-hidden">Ваш вопрос</span>
           <textarea
             class="form__question form__question--modal"
             name="question"
@@ -372,6 +374,7 @@
       </form>
     </div>
     <script src="js/vendor/smoothscroll.min.js"></script>
+    <script src="js/vendor/polyfill-ie11-nodelist-foreach.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

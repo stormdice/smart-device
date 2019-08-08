@@ -4,33 +4,34 @@
   padding-bottom: 114px;
   color: white;
   background-color: $color-blue;
-  background-image: url("../img/airplane@1x.png"),
-    url("../img/triangles-footer.svg");
+  background-image: url("../img/airplane@1x.png"), url("../img/triangles.svg");
   background-repeat: no-repeat;
   background-size: 686px 641px, auto;
-  background-position: top -60px left 175px, top 35px right 0;
+  background-position: top -60px left 175px, top 35px right -83px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/airplane@2x.png");
+    background-image: url("../img/airplane@2x.png"), url("../img/triangles.svg");
   }
 
   @media (max-width: 1900px) {
-    background-position: top -60px left 0;
+    background-position: top -60px left 0, top 35px right 0;
   }
 
   @media (max-width: 1400px) {
-    background-image: none;
+    background-image: url("../img/triangles.svg");
+    background-size: auto;
+    background-position: top 0 left 0;
   }
 
   @media (max-width: $desktop-width) {
     padding-top: 80px;
     padding-bottom: 103px;
+    background-image: none;
   }
 
   @media (max-width: $tablet-width) {
     padding-top: 31px;
     padding-bottom: 44px;
-    background-image: none;
   }
 }
 

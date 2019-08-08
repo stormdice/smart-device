@@ -78,7 +78,7 @@
 .form__label {
   display: block;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
 
   &--modal {
     margin-bottom: 30px;
@@ -136,9 +136,12 @@
   }
 
   @media (max-width: $tablet-width) {
+    display: block;
     width: 100%;
     max-width: 292px;
     margin-bottom: 23px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -181,6 +184,9 @@
   }
 
   @media (max-width: $tablet-width) {
+    margin-right: auto;
+    margin-left: auto;
+
     & input:checked + .form__data-processing-text {
       &::after {
         top: 5px;

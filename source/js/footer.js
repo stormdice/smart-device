@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-  const tabletWidth = 770;
+  const tabletWidth = 768;
 
   if (screen.width < tabletWidth) {
     const footerContentList = document.querySelectorAll('.js-footer-list');

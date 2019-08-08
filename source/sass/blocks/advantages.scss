@@ -30,6 +30,7 @@
   border-left: 2px solid $color-blue;
   transition: background-color 0.3s, color 0.3s;
   user-select: none;
+  cursor: pointer;
 
   &:nth-child(2n) {
     margin-right: 0;
@@ -87,7 +88,6 @@
   }
 
   @media (max-width: $desktop-width) {
-    width: 345px;
     min-height: 307px;
     padding: 22px 20px 14px 25px;
 
