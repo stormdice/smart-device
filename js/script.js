@@ -1,5 +1,17 @@
 'use strict';
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["D*"], ["\\D*"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 (function () {
   var tabletWidth = 768;
 
@@ -27,6 +39,16 @@
   });
 })();
 
+'use strict';
+
+$(document).ready(function () {
+  $('.js-tel-only').inputmask({
+    mask: '+7 (999)999-99-99'
+  });
+  $('.js-text-only').inputmask({
+    regex: String.raw(_templateObject())
+  });
+});
 'use strict';
 
 (function () {
