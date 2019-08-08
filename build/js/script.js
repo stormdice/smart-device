@@ -13,6 +13,17 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 (function () {
+  var btnAboutMoreDetails = document.querySelector('.js-more-details');
+  var contentAboutTextContainer = document.querySelector('.js-about-text-container');
+  btnAboutMoreDetails.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    contentAboutTextContainer.classList.toggle('about__text-container--height');
+  });
+})();
+
+'use strict';
+
+(function () {
   var tabletWidth = 768;
 
   if (screen.width < tabletWidth) {

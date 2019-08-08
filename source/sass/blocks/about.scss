@@ -11,17 +11,6 @@
     @include title-h2(20px);
   }
 
-  & p {
-    margin-top: 0;
-    margin-bottom: 22px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    &:last-of-type {
-      margin-bottom: 39px;
-    }
-  }
-
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/2005-desktop@2x.jpg");
   }
@@ -41,17 +30,6 @@
     & h2 {
       margin-bottom: 26px;
     }
-
-    & p {
-      margin-bottom: 20px;
-      padding-right: 10px;
-      padding-left: 3px;
-
-      &:last-of-type {
-        height: 87px;
-        margin-bottom: 43px;
-      }
-    }
   }
 
   @media (max-width: $tablet-width) {
@@ -63,25 +41,33 @@
     & h2 {
       margin-bottom: 21px;
     }
-
-    & p {
-      margin-bottom: 41px;
-      padding-right: 0;
-      padding-left: 3px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      &:last-of-type {
-        margin-bottom: 31px;
-        height: 174px;
-      }
-    }
   }
 }
 
-.about__text-hidden {
+.about__text-container {
+  position: relative;
+  max-height: 152px;
+  margin-bottom: 39px;
+  overflow: hidden;
+  transition: max-height 0.7s;
+
+  &--height {
+    max-height: 800px;
+    transition: max-height 0.7s;
+  }
+
+  & p {
+    margin-top: 0;
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   @media (max-width: $desktop-width) {
-    position: relative;
+    max-height: 194px;
+    margin-bottom: 43px;
 
     &::before {
       position: absolute;
@@ -89,14 +75,60 @@
       right: 4px;
       content: "..";
     }
+
+    &--height {
+      max-height: 800px;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    & p {
+      margin-bottom: 20px;
+      padding-right: 10px;
+      padding-left: 3px;
+    }
   }
 
   @media (max-width: $tablet-width) {
+    max-height: 345px;
+    margin-bottom: 31px;
+
     &::before {
       right: 0;
-      width: 155px;
+      width: 53%;
       height: 21px;
       background-color: white;
+      content: none;
+    }
+
+    &--height {
+      max-height: 800px;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    & p {
+      margin-bottom: 41px;
+      padding-right: 0;
+      padding-left: 3px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    &::before {
+      content: "..";
+    }
+
+    &--height {
+      max-height: 800px;
+
+      &::before {
+        content: none;
+      }
     }
   }
 }
