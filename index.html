@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Put your description here.">
     <title>Smart Device умные технологии</title>
     <link rel="stylesheet" href="css/style.min.css">
   </head>
@@ -23,9 +24,9 @@
               </svg>
             </div>
           </a>
-          <button type="button" class="menu">
+          <a href="#" class="menu">
             <span>меню</span>
-          </button>
+          </a>
           <a class="header__contacts header__contacts--email" href="mailto:info@sd.ru">
             <svg width="19" height="14">
               <use xlink:href="#message"></use>
@@ -112,22 +113,6 @@
               СпецМедТехники. Среди наших клиентов крупнейшие Производители
               светотехники России.
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam in
-              sed est ut doloribus, adipisci repellat dignissimos laborum cumque
-              aspernatur labore ea similique nobis ab aut voluptates odit quod
-              consequuntur.Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Nam in sed est ut doloribus, adipisci repellat dignissimos
-              laborum cumque aspernatur labore ea similique nobis ab aut
-              voluptates odit quod consequuntur.Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Nam in sed est ut doloribus,
-              adipisci repellat dignissimos laborum cumque aspernatur labore ea
-              similique nobis ab aut voluptates odit quod consequuntur.Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Nam in sed est
-              ut doloribus, adipisci repellat dignissimos laborum cumque
-              aspernatur labore ea similique nobis ab aut voluptates odit quod
-              consequuntur.
-            </p>
           </div>
           <a class="btn about__more js-more-details" href="#">Подробнее</a>
         </section>
@@ -153,18 +138,18 @@
     </main>
     <footer class="footer">
       <section class="footer__form">
-        <div class="container">
+        <div class="container footer__form-container">
           <form class="form" action="#">
             <h2 class="form__title">Остались вопросы? Задайте их нам!</h2>
             <p class="form__text">Мы проконсультируем Вас бесплатно</p>
             <div class="form__container">
               <label class="form__label form__label--small">
                 <span class="visually-hidden">Имя</span>
-                <input class="form__input js-text-only" type="text" name="name" minlength="3" maxlength="256" placeholder="Имя">
+                <input class="form__input js-text-only" type="text" name="name" minlength="3" maxlength="256" placeholder="Имя" required="">
               </label>
               <label class="form__label form__label--small">
                 <span class="visually-hidden">Телефон</span>
-                <input class="form__input js-tel-only" type="tel" name="tel" placeholder="Телефон">
+                <input class="form__input js-tel-only" type="tel" name="tel" placeholder="Телефон" required="">
               </label>
             </div>
             <label class="form__label form__label--textarea">
@@ -265,11 +250,11 @@
         <div class="form__container form__container--modal">
           <label class="form__label form__label--modal">
             <span class="visually-hidden">Имя</span>
-            <input class="form__input form__input--modal js-text-only" type="text" name="name" minlength="3" maxlength="256" placeholder="Имя">
+            <input class="form__input form__input--modal js-text-only" type="text" name="name" minlength="3" maxlength="256" placeholder="Имя" required="">
           </label>
           <label class="form__label form__label--modal">
             <span class="visually-hidden">Телефон</span>
-            <input class="form__input form__input--modal js-tel-only" type="tel" name="tel" placeholder="Телефон">
+            <input class="form__input form__input--modal js-tel-only" type="tel" name="tel" placeholder="Телефон" required="">
           </label>
         </div>
         <label class="form__label form__label--modal-question">
@@ -285,10 +270,7 @@
         </div>
       </form>
     </div>
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/jquery.inputmask.min.js"></script>
-    <script src="js/vendor/smoothscroll.min.js"></script>
-    <script src="js/vendor/polyfill-ie11-nodelist-foreach.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>

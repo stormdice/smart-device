@@ -61,7 +61,7 @@ $(document).ready(function () {
 
   var createOverlay = function createOverlay() {
     var div = document.createElement('div');
-    div.style = 'position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); z-index: 1';
+    div.setAttribute('style', 'position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); z-index: 1');
     div.classList.add('overlay');
     var overlay = body.appendChild(div);
     overlay.addEventListener('click', function () {
@@ -101,8 +101,9 @@ $(document).ready(function () {
 
 
   var showModal = function showModal(modal) {
-    createOverlay();
+    var scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
     body.classList.add('modal-open');
+    createOverlay();
     modal.classList.add('modal--show');
     document.addEventListener('keydown', onEscModalClose);
   };
@@ -112,6 +113,7 @@ $(document).ready(function () {
       evt.preventDefault();
       body.removeChild(document.querySelector('.overlay'));
       closeModal();
+      document.removeEventListener('keydown', onEscModalClose);
     });
   });
   linkBackCall.addEventListener('click', function (evt) {
