@@ -1,36 +1,54 @@
 .footer__form {
   position: relative;
-  padding-top: 92px;
-  padding-bottom: 114px;
   color: white;
   background-color: $color-blue;
-  background-image: url("../img/airplane@1x.png"), url("../img/triangles.svg");
+  background-image: url("../img/triangles.svg");
   background-repeat: no-repeat;
-  background-size: 686px 641px, auto;
-  background-position: top -60px left 175px, top 35px right -83px;
+  background-size: auto;
+  background-position: top 35px right -83px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/airplane@2x.png"), url("../img/triangles.svg");
+    background-image: url("../img/triangles.svg");
   }
 
-  @media (max-width: 1900px) {
-    background-position: top -60px left 0, top 35px right 0;
-  }
-
-  @media (max-width: 1400px) {
+  @media (max-width: 1368px) {
     background-image: url("../img/triangles.svg");
     background-size: auto;
     background-position: top 0 left 0;
   }
 
   @media (max-width: $desktop-width) {
-    padding-top: 80px;
-    padding-bottom: 103px;
     background-image: none;
+  }
+}
+
+.footer__form-container {
+  max-width: 1570px;
+  padding-top: 92px;
+  padding-right: 200px;
+  padding-bottom: 114px;
+  background-image: url("../img/airplane@1x.png");
+  background-repeat: no-repeat;
+  background-size: 686px 641px;
+  background-position: top -58px left 0;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/airplane@2x.png");
+  }
+
+  @media (max-width: 1368px) {
+    background-image: none;
+  }
+
+  @media (max-width: $desktop-width) {
+    padding-top: 80px;
+    padding-right: 25px;
+    padding-bottom: 103px;
   }
 
   @media (max-width: $tablet-width) {
     padding-top: 31px;
+    padding-right: 15px;
     padding-bottom: 43px;
   }
 }

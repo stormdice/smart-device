@@ -12,8 +12,10 @@
   const createOverlay = () => {
     const div = document.createElement('div');
 
-    div.style =
-      'position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); z-index: 1';
+    div.setAttribute(
+      'style',
+      'position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); z-index: 1'
+    );
     div.classList.add('overlay');
     const overlay = body.appendChild(div);
 

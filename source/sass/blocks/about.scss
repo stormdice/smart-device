@@ -49,11 +49,9 @@
   max-height: 152px;
   margin-bottom: 39px;
   overflow: hidden;
-  transition: max-height 0.7s;
 
   &--height {
-    max-height: 800px;
-    transition: max-height 0.7s;
+    max-height: none;
   }
 
   & p {
@@ -77,7 +75,7 @@
     }
 
     &--height {
-      max-height: 800px;
+      max-height: 2000px;
 
       &::before {
         content: none;
@@ -104,7 +102,7 @@
     }
 
     &--height {
-      max-height: 800px;
+      max-height: none;
 
       &::before {
         content: none;
@@ -121,14 +119,21 @@
   @media (max-width: 400px) {
     &::before {
       content: "..";
+      width: 21%;
     }
 
     &--height {
-      max-height: 800px;
+      max-height: none;
 
       &::before {
         content: none;
       }
+    }
+  }
+
+  @media (max-width: 375px) {
+    &::before {
+      width: 53%;
     }
   }
 }

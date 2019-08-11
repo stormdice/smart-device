@@ -111,6 +111,8 @@
   border: 1px solid transparent;
   outline: none;
   transition: border-color 0.3s;
+  border-radius: 0;
+  -webkit-appearance: none;
 
   &::placeholder {
     color: white;
