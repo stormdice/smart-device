@@ -101,8 +101,9 @@ $(document).ready(function () {
 
 
   var showModal = function showModal(modal) {
-    createOverlay();
+    var scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
     body.classList.add('modal-open');
+    createOverlay();
     modal.classList.add('modal--show');
     document.addEventListener('keydown', onEscModalClose);
   };
@@ -112,6 +113,7 @@ $(document).ready(function () {
       evt.preventDefault();
       body.removeChild(document.querySelector('.overlay'));
       closeModal();
+      document.removeEventListener('keydown', onEscModalClose);
     });
   });
   linkBackCall.addEventListener('click', function (evt) {

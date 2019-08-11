@@ -17,6 +17,7 @@ const include = require('posthtml-include');
 const del = require('del');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 
 gulp.task('css', function() {
   return gulp
@@ -106,6 +107,10 @@ gulp.task('js', function() {
         presets: ['@babel/env']
       })
     )
+    .pipe(gulp.dest('build/js'))
+    .pipe(uglify())
+    .pipe(rename("script.min.js"))
+
     .pipe(gulp.dest('build/js'));
 });
 
@@ -114,6 +119,7 @@ gulp.task('js-vendor', () => {
     .src(['source/js/vendor/jquery.min.js', 'source/js/vendor/*.js'])
     .pipe(plumber())
     .pipe(concat('vendor.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('build/js'));
 });
 

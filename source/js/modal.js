@@ -56,8 +56,12 @@
    * @param {HTMLElement} modal - DOM элемент
    */
   const showModal = modal => {
-    createOverlay();
+    const scrollY = document.documentElement.style.getPropertyValue(
+      '--scroll-y'
+    );
+
     body.classList.add('modal-open');
+    createOverlay();
     modal.classList.add('modal--show');
     document.addEventListener('keydown', onEscModalClose);
   };
@@ -67,6 +71,7 @@
       evt.preventDefault();
       body.removeChild(document.querySelector('.overlay'));
       closeModal();
+      document.removeEventListener('keydown', onEscModalClose);
     });
   });
 

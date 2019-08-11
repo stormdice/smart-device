@@ -29,6 +29,8 @@
 .form__title {
   @include title-h2(9px);
 
+  margin-left: -4px;
+
   &--modal {
     font-size: 28px;
     line-height: 140%;
@@ -46,7 +48,7 @@
 
 .form__text {
   margin-top: 0;
-  margin-bottom: 51px;
+  margin-bottom: 52px;
 
   &--modal {
     margin-bottom: 32px;

@@ -30,7 +30,7 @@
   background-image: url("../img/airplane@1x.png");
   background-repeat: no-repeat;
   background-size: 686px 641px;
-  background-position: top -58px left 0;
+  background-position: top -60px left 0;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/airplane@2x.png");
@@ -43,7 +43,7 @@
   @media (max-width: $desktop-width) {
     padding-top: 80px;
     padding-right: 25px;
-    padding-bottom: 103px;
+    padding-bottom: 104px;
   }
 
   @media (max-width: $tablet-width) {
@@ -91,7 +91,7 @@
     align-items: center;
     width: 100%;
     margin-right: 0;
-    margin-bottom: 37px;
+    margin-bottom: 39px;
     padding-right: 25px;
     padding-bottom: 23px;
     padding-left: 25px;
