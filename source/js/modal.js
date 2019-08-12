@@ -22,6 +22,7 @@
     overlay.addEventListener('click', () => {
       body.removeChild(overlay);
       closeModal();
+      document.removeEventListener('keydown', onEscModalClose);
     });
 
     return overlay;
@@ -56,10 +57,6 @@
    * @param {HTMLElement} modal - DOM элемент
    */
   const showModal = modal => {
-    const scrollY = document.documentElement.style.getPropertyValue(
-      '--scroll-y'
-    );
-
     body.classList.add('modal-open');
     createOverlay();
     modal.classList.add('modal--show');

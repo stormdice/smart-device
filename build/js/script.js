@@ -67,6 +67,7 @@ $(document).ready(function () {
     overlay.addEventListener('click', function () {
       body.removeChild(overlay);
       closeModal();
+      document.removeEventListener('keydown', onEscModalClose);
     });
     return overlay;
   };
@@ -101,7 +102,6 @@ $(document).ready(function () {
 
 
   var showModal = function showModal(modal) {
-    var scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
     body.classList.add('modal-open');
     createOverlay();
     modal.classList.add('modal--show');
