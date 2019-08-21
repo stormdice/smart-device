@@ -53,7 +53,9 @@
         </div>
         <section class="promo">
           <h2>Печатные платы</h2>
-          <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
+          <p>
+            производство и монтаж, поставка комплектующих, блоков и модулей
+          </p>
           <a class="btn promo__consultation" href="#">
             <span class="promo__consultation-text"
               >бесплатная консультация</span
@@ -315,69 +317,71 @@
         </div>
       </div>
     </footer>
-    <div class="modal js-modal js-modal-back-call">
-      <form class="form form--modal" action="#">
-        <h2 class="form__title form__title--modal">Закажите звонок</h2>
-        <p class="form__text form__text--modal">
-          Оставьте контакты, мы проконсультируем<br />
-          вас бесплатно в удобное время
-        </p>
-        <button
-          class="modal__close js-modal-close"
-          type="button"
-          aria-label="закрыть"
-        ></button>
-        <div class="form__container form__container--modal">
-          <label class="form__label form__label--modal">
-            <span class="visually-hidden">Имя</span>
-            <input
-              class="form__input form__input--modal js-text-only"
-              type="text"
-              name="name"
-              minlength="3"
-              maxlength="256"
-              placeholder="Имя"
-              required
-            />
+    <div class="modal" id="callback">
+      <div class="modal__content">
+        <form class="form form--modal" action="#">
+          <h2 class="form__title form__title--modal">Закажите звонок</h2>
+          <p class="form__text form__text--modal">
+            Оставьте контакты, мы проконсультируем<br />
+            вас бесплатно в удобное время
+          </p>
+          <button
+            class="modal__close js-modal-close"
+            type="button"
+            aria-label="закрыть"
+          ></button>
+          <div class="form__container form__container--modal">
+            <label class="form__label form__label--modal">
+              <span class="visually-hidden">Имя</span>
+              <input
+                class="form__input form__input--modal js-text-only"
+                type="text"
+                name="name"
+                minlength="3"
+                maxlength="256"
+                placeholder="Имя"
+                required
+              />
+            </label>
+            <label class="form__label form__label--modal">
+              <span class="visually-hidden">Телефон</span>
+              <input
+                class="form__input form__input--modal js-tel-only"
+                type="tel"
+                name="tel"
+                placeholder="Телефон"
+                required
+              />
+            </label>
+          </div>
+          <label class="form__label form__label--modal-question">
+            <span class="visually-hidden">Ваш вопрос</span>
+            <textarea
+              class="form__question form__question--modal"
+              name="question"
+              placeholder="Ваш вопрос"
+            ></textarea>
           </label>
-          <label class="form__label form__label--modal">
-            <span class="visually-hidden">Телефон</span>
-            <input
-              class="form__input form__input--modal js-tel-only"
-              type="tel"
-              name="tel"
-              placeholder="Телефон"
-              required
-            />
-          </label>
-        </div>
-        <label class="form__label form__label--modal-question">
-          <span class="visually-hidden">Ваш вопрос</span>
-          <textarea
-            class="form__question form__question--modal"
-            name="question"
-            placeholder="Ваш вопрос"
-          ></textarea>
-        </label>
-        <button
-          class="btn form__ask-question form__ask-question--modal"
-          type="submit"
-        >
-          отправить
-        </button>
-        <div class="form__data-processing form__data-processing--modal">
-          <input
-            id="backcall-personal-data-processing"
-            type="checkbox"
-            checked
-          />
-          <label
-            class="form__data-processing-text form__data-processing-text--modal"
-            for="backcall-personal-data-processing"
-            >Я согласен на обработку персональных данных</label
+          <button
+            class="btn form__ask-question form__ask-question--modal"
+            type="submit"
           >
-        </div>
-      </form>
+            отправить
+          </button>
+          <div class="form__data-processing form__data-processing--modal">
+            <input
+              id="backcall-personal-data-processing"
+              type="checkbox"
+              checked
+            />
+            <label
+              class="form__data-processing-text form__data-processing-text--modal"
+              for="backcall-personal-data-processing"
+              >Я согласен на обработку персональных данных</label
+            >
+          </div>
+        </form>
+      </div>
     </div>
     <script src="js/vendor.js"></script>
     <script src="js/script.min.js"></script>

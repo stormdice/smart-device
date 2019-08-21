@@ -52,36 +52,24 @@ $(document).ready(function () {
 
 (function () {
   var buttonModalClose = document.querySelectorAll('.js-modal-close');
-  var modalBackCall = document.querySelector('.js-modal-back-call');
+  var modalBackCall = document.querySelector('#callback');
   var linkBackCall = document.querySelector('.js-back-call');
-  var body = document.querySelector('body');
-  /**
-   * создаёт разметку оверлея
-   */
-
-  var createOverlay = function createOverlay() {
-    var div = document.createElement('div');
-    div.setAttribute('style', 'position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); z-index: 1');
-    div.classList.add('overlay');
-    var overlay = body.appendChild(div);
-    overlay.addEventListener('click', function () {
-      body.removeChild(overlay);
-      closeModal();
-      document.removeEventListener('keydown', onEscModalClose);
-    });
-    return overlay;
-  };
   /**
    * Закрывает модальное окно
    */
 
-
   var closeModal = function closeModal() {
-    var modals = document.querySelectorAll('.js-modal');
+    var modals = document.querySelectorAll('.modal');
+    document.querySelector('body').style = '';
     modals.forEach(function (modal) {
+      modal.addEventListener('click', function (evt) {
+        if (evt.target === modalBackCall) {
+          modal.classList.remove('modal--show');
+          document.querySelector('body').style = '';
+        }
+      });
       modal.classList.remove('modal--show');
     });
-    body.classList.remove('modal-open');
   };
   /**
    * При нажатии на ESC убирает модальное окно
@@ -90,7 +78,6 @@ $(document).ready(function () {
 
   var onEscModalClose = function onEscModalClose(evt) {
     if (window.utils.checkEscEvent(evt)) {
-      body.removeChild(document.querySelector('.overlay'));
       closeModal();
       document.removeEventListener('keydown', onEscModalClose);
     }
@@ -102,8 +89,14 @@ $(document).ready(function () {
 
 
   var showModal = function showModal(modal) {
-    body.classList.add('modal-open');
-    createOverlay();
+    var isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+
+    if (isMac) {
+      document.querySelector('body').style = 'overflow: hidden;';
+    } else {
+      document.querySelector('body').style = 'overflow: hidden; margin-right: 16px';
+    }
+
     modal.classList.add('modal--show');
     document.addEventListener('keydown', onEscModalClose);
   };
@@ -111,7 +104,6 @@ $(document).ready(function () {
   buttonModalClose.forEach(function (button) {
     button.addEventListener('click', function (evt) {
       evt.preventDefault();
-      body.removeChild(document.querySelector('.overlay'));
       closeModal();
       document.removeEventListener('keydown', onEscModalClose);
     });
