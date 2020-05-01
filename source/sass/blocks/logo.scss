@@ -4,7 +4,7 @@
 
   &:hover .logo__container .logo__text:first-child {
     color: $color-blue;
-    transition: color 0.3s;
+    transition: color $time;
   }
 
   &--footer {
@@ -67,7 +67,7 @@
 .logo__text {
   display: block;
   user-select: none;
-  transition: color 0.3s;
+  transition: color $time;
   margin-bottom: 7px;
   font-family: $font-alt;
   font-weight: 700;

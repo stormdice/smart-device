@@ -79,7 +79,7 @@
   background-image: url("../img/production-desktop@1x.png");
   background-repeat: no-repeat;
   background-size: cover;
-  transition: border-color 0.3s;
+  transition: border-color $time;
 
   &::before {
     position: absolute;
@@ -97,7 +97,7 @@
   &:hover,
   &:focus {
     border-color: $color-blue;
-    transition: border-color 0.3s;
+    transition: border-color $time;
   }
 
   &:active {

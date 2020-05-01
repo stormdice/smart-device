@@ -1,14 +1,25 @@
 'use strict';
 
-(function() {
-  const tabletWidth = 768;
+(function () {
+  const footer = document.querySelector('.footer');
+  const footerNavButtons = document.querySelectorAll('.js-open-footer-nav');
 
-  if (screen.width < tabletWidth) {
-    const footerContentList = document.querySelectorAll('.js-footer-list');
+  if (footerNavButtons.length) {
+    footerNavButtons.forEach((button) => {
+      button.addEventListener('click', (evt) => {
+        const thisFooterContent = button.closest('.footer__content');
 
-    footerContentList.forEach(list => {
-      list.addEventListener('click', () => {
-        list.classList.toggle('footer__content--height');
+        if (thisFooterContent.classList.contains('footer__content--show-nav')) {
+          thisFooterContent.classList.remove('footer__content--show-nav');
+        } else {
+          if (footer.querySelector('.footer__content--show-nav')) {
+            footer
+              .querySelector('.footer__content--show-nav')
+              .classList.remove('footer__content--show-nav');
+          }
+
+          thisFooterContent.classList.add('footer__content--show-nav');
+        }
       });
     });
   }

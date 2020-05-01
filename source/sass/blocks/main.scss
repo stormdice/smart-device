@@ -1,13 +1,10 @@
 .main {
   position: relative;
   background-image: url("../img/triangle.svg"),
-    url("../img/triangle-rotate.svg"),
- url("../img/triangle-big.svg"),
+    url("../img/triangle-rotate.svg"), url("../img/triangle-big.svg"),
     url("../img/triangle-big-rotate.svg");
-  background-position: top 397px right 28px,
- top 46px left 202px,
-    top 148px right 489px,
- top 441px left -297px;
+  background-position: top 397px right 28px, top 46px left 202px,
+    top 148px right 489px, top 441px left -297px;
   background-repeat: no-repeat;
 
   @media (max-width: $desktop-width) {

@@ -28,9 +28,8 @@
   border-right: 1px solid $color-gray;
   border-bottom: 1px solid $color-gray;
   border-left: 2px solid $color-blue;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color $time, color $time;
   user-select: none;
-  cursor: pointer;
 
   &:nth-child(2n) {
     margin-right: 0;
@@ -43,24 +42,24 @@
   &:hover {
     background-color: $color-blue;
     color: white;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color $time, color $time;
   }
 
   &:hover svg {
     fill: white;
-    transition: fill 0.3s;
+    transition: fill $time;
   }
 
   &:hover h3 {
     color: white;
-    transition: color 0.3s;
+    transition: color $time;
   }
 
   & svg {
     display: block;
     margin-bottom: 19px;
     fill: $color-blue;
-    transition: fill 0.3s;
+    transition: fill $time;
 
     @media (max-width: $tablet-width) {
       margin-bottom: 12px;
@@ -75,7 +74,7 @@
     font-size: 24px;
     line-height: 34px;
     color: $color-blue;
-    transition: color 0.3s;
+    transition: color $time;
   }
 
   & p {

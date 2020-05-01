@@ -1,6 +1,4 @@
 .form {
-  width: 570px;
-  margin-left: auto;
   background-color: $color-blue;
   color: white;
 
@@ -11,11 +9,14 @@
 
   @media (max-width: $desktop-width) {
     margin-right: auto;
+    margin-left: auto;
     width: 590px;
+    transition: width $time;
   }
 
   @media (max-width: $tablet-width) {
     width: 100%;
+    transition: width $time;
 
     &--modal {
       width: 100vw;
@@ -186,7 +187,7 @@
   & input:hover + .form__data-processing-text,
   & input:focus + .form__data-processing-text {
     opacity: 1;
-    transition: opacity 0.3s;
+    transition: opacity $time;
   }
 
   @media (max-width: $desktop-width) {
@@ -215,7 +216,7 @@
   opacity: 0.8;
   cursor: pointer;
   user-select: none;
-  transition: opacity 0.3s;
+  transition: opacity $time;
 
   &--modal {
     padding-left: 48px;

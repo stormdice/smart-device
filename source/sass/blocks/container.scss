@@ -4,9 +4,11 @@
   max-width: 1220px;
   margin-right: auto;
   margin-left: auto;
+  transition: max-width $time, padding $time;
 
   @media (max-width: $desktop-width) {
     max-width: 770px;
+    transition: max-width $time, padding $time;
   }
 
   @media (max-width: $tablet-width) {

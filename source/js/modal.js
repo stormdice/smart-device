@@ -1,37 +1,64 @@
 'use strict';
 
-(function() {
+(function () {
+  const ModalType = {
+    CALLBACK: 'modal-callback',
+    MENU: 'modal-menu',
+  };
+
+  const htmlElement = document.querySelector('html');
+  const modalOverlays = document.querySelectorAll('.modal');
   const buttonModalClose = document.querySelectorAll('.js-modal-close');
-  const modalBackCall = document.querySelector('#callback');
   const linkBackCall = document.querySelector('.js-back-call');
+  const buttonOpenMenu = document.querySelector('.js-menu');
+  const nav = document.querySelector('.nav');
 
   /**
    * Закрывает модальное окно
    */
   const closeModal = () => {
-    const modals = document.querySelectorAll('.modal');
+    htmlElement.classList.remove(
+      'show-modal',
+      ModalType.CALLBACK,
+      ModalType.MENU
+    );
 
-    document.querySelector('body').style = '';
+    nav.removeAttribute('style');
 
-    modals.forEach(modal => {
-      modal.addEventListener('click', evt => {
-        if (evt.target === modalBackCall) {
-          modal.classList.remove('modal--show');
-          document.querySelector('body').style = '';
-        }
-      });
+    document.removeEventListener('keydown', onEscModalClose);
+  };
 
-      modal.classList.remove('modal--show');
+  const checkNavigationWhenCloseModal = () => {
+    if (nav) {
+      nav.setAttribute('style', 'animation: menu-close 0.2s');
+      setTimeout(closeModal, 200);
+
+      return;
+    }
+
+    closeModal();
+  };
+
+  /**
+   * Функция для обработчика события
+   * @param {Object} evt - глобальный объект Event
+   */
+  const closeModalOverlay = (evt) => {
+    modalOverlays.forEach((modal) => {
+      if (evt.target !== modal) {
+        return;
+      }
+
+      checkNavigationWhenCloseModal();
     });
   };
 
   /**
    * При нажатии на ESC убирает модальное окно
    */
-  const onEscModalClose = function(evt) {
+  const onEscModalClose = function (evt) {
     if (window.utils.checkEscEvent(evt)) {
-      closeModal();
-      document.removeEventListener('keydown', onEscModalClose);
+      checkNavigationWhenCloseModal();
     }
   };
 
@@ -39,30 +66,37 @@
    * Показывает модальное окно
    * @param {HTMLElement} modal - DOM элемент
    */
-  const showModal = modal => {
-    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+  const showModal = (modalType) => {
+    htmlElement.classList.add('show-modal');
 
-    if (isMac) {
-      document.querySelector('body').style = 'overflow: hidden;';
-    } else {
-      document.querySelector('body').style =
-        'overflow: hidden; margin-right: 16px';
+    switch (modalType) {
+      case ModalType.CALLBACK:
+        htmlElement.classList.add(ModalType.CALLBACK);
+        break;
+      case ModalType.MENU:
+        htmlElement.classList.add(ModalType.MENU);
+        break;
     }
 
-    modal.classList.add('modal--show');
+    document.addEventListener('click', closeModalOverlay);
     document.addEventListener('keydown', onEscModalClose);
   };
 
-  buttonModalClose.forEach(button => {
-    button.addEventListener('click', evt => {
+  buttonModalClose.forEach((button) => {
+    button.addEventListener('click', (evt) => {
       evt.preventDefault();
-      closeModal();
-      document.removeEventListener('keydown', onEscModalClose);
+
+      checkNavigationWhenCloseModal();
     });
   });
 
-  linkBackCall.addEventListener('click', evt => {
+  linkBackCall.addEventListener('click', (evt) => {
     evt.preventDefault();
-    showModal(modalBackCall);
+    showModal(ModalType.CALLBACK);
+  });
+
+  buttonOpenMenu.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    showModal(ModalType.MENU);
   });
 })();

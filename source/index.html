@@ -28,14 +28,15 @@
               </svg>
             </div>
           </a>
-          <button type="button" class="menu">
+          <button class="menu js-menu" type="button">
             <span>меню</span>
           </button>
           <a
             class="header__contacts header__contacts--email"
             href="mailto:info@sd.ru"
+            aria-label="Наш адрес электронной почты"
           >
-            <svg width="19" height="14">
+            <svg width="19" height="14" aria-hidden="true">
               <use xlink:href="#message"></use>
             </svg>
             <span>info@sd.ru</span>
@@ -43,8 +44,9 @@
           <a
             class="header__contacts header__contacts--tel"
             href="tel:+74950005252"
+            aria-label="Наш телефон"
           >
-            <svg width="18" height="18">
+            <svg width="18" height="18" aria-hidden="true">
               <use xlink:href="#phone-call"></use>
             </svg>
             <span>+7 (495) 000 52 52</span></a
@@ -65,13 +67,35 @@
             >
           </a>
         </section>
-        <a class="header__scroll js-scroll-down" href="#">Скролл вниз</a>
+        <a class="header__scroll js-scroll-down" href="#advantages"
+          >Скролл вниз</a
+        >
+      </div>
+      <div class="modal" id="menu">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a class="nav__item" href="#">О компании</a></li>
+            <li><a class="nav__item" href="#">Продукты</a></li>
+            <li>
+              <a class="nav__item" href="#">Производство печатных плат</a>
+            </li>
+            <li><a class="nav__item" href="#">Монтаж печатных плат</a></li>
+            <li><a class="nav__item" href="#">Комплектующие</a></li>
+            <li><a class="nav__item" href="#">Доставка</a></li>
+            <li><a class="nav__item" href="#">Контакты</a></li>
+          </ul>
+          <button
+            class="modal__close modal__close--big js-modal-close"
+            type="button"
+            aria-label="закрыть"
+          ></button>
+        </nav>
       </div>
     </header>
     <main class="main">
       <h1 class="visually-hidden">Smart Device умные технологии</h1>
       <div class="container">
-        <ul class="advantages">
+        <ul class="advantages" id="advantages">
           <li class="advantages__item advantages__item--terms">
             <svg width="29" height="35">
               <use xlink:href="#stopwatch"></use>
@@ -160,6 +184,12 @@
     <footer class="footer">
       <section class="footer__form">
         <div class="container footer__form-container">
+          <img
+            class="footer__form-img"
+            src="img/airplane@1x.png"
+            alt=""
+            aria-hidden="true"
+          />
           <form class="form" action="#">
             <h2 class="form__title">Остались вопросы? Задайте их нам!</h2>
             <p class="form__text">Мы проконсультируем Вас бесплатно</p>
@@ -282,8 +312,16 @@
             </ul>
           </div>
           <div class="footer__nav">
-            <section class="footer__content js-footer-list">
-              <h3>Разделы сайта</h3>
+            <div class="footer__content">
+              <h3>
+                Разделы сайта
+                <button
+                  class="footer__button-open-nav js-open-footer-nav"
+                  type="button"
+                >
+                  <span class="visually-hidden">Открыть/Закрыть список</span>
+                </button>
+              </h3>
               <ul class="footer__nav-list">
                 <li><a href="#">О компании</a></li>
                 <li><a href="#">Продукты</a></li>
@@ -293,18 +331,22 @@
                 <li><a href="#">Доставка</a></li>
                 <li><a href="#">Контакты</a></li>
               </ul>
-            </section>
-            <section
-              class="footer__content footer__content--height js-footer-list"
-            >
+            </div>
+            <div class="footer__content">
               <h3>Наш офис</h3>
+              <button
+                class="footer__button-open-nav js-open-footer-nav"
+                type="button"
+              >
+                <span class="visually-hidden">Открыть/Закрыть список</span>
+              </button>
               <ul class="footer__contacts-list">
                 <li>г. Мытищи, Олимпийский проспект, д.10</li>
                 <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
                 <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>
                 <li><a href="tel:+792692608079">+7 (926) 926-080-79</a></li>
               </ul>
-            </section>
+            </div>
           </div>
         </div>
         <div class="footer__copyright">
@@ -325,11 +367,6 @@
             Оставьте контакты, мы проконсультируем<br />
             вас бесплатно в удобное время
           </p>
-          <button
-            class="modal__close js-modal-close"
-            type="button"
-            aria-label="закрыть"
-          ></button>
           <div class="form__container form__container--modal">
             <label class="form__label form__label--modal">
               <span class="visually-hidden">Имя</span>
@@ -381,6 +418,11 @@
             >
           </div>
         </form>
+        <button
+          class="modal__close js-modal-close"
+          type="button"
+          aria-label="закрыть"
+        ></button>
       </div>
     </div>
     <script src="js/vendor.js"></script>

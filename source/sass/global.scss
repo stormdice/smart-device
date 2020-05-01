@@ -36,6 +36,44 @@ img {
   @include visually-hidden();
 }
 
-.overflow-container {
-  overflow-x: hidden;
+.show-modal {
+  overflow-y: hidden;
+
+  &.modal-callback {
+    & #callback {
+      display: flex;
+    }
+  }
+
+  &.modal-menu {
+    & #menu {
+      display: flex;
+
+      & .nav {
+        transform: translateX(0);
+        animation: menu-open $time ease-out;
+        will-change: animation;
+      }
+    }
+  }
+}
+
+@keyframes menu-open {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes menu-close {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
