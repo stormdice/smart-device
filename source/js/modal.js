@@ -1,14 +1,10 @@
 'use strict';
 
 (function () {
-  const ModalType = {
-    CALLBACK: 'modal-callback',
-    MENU: 'modal-menu',
-  };
-
   const htmlElement = document.querySelector('html');
   const modalOverlays = document.querySelectorAll('.modal');
   const buttonModalClose = document.querySelectorAll('.js-modal-close');
+  const buttonNavClose = document.querySelector('.js-nav-close');
   const linkBackCall = document.querySelector('.js-back-call');
   const buttonOpenMenu = document.querySelector('.js-menu');
   const nav = document.querySelector('.nav');
@@ -17,26 +13,8 @@
    * Закрывает модальное окно
    */
   const closeModal = () => {
-    htmlElement.classList.remove(
-      'show-modal',
-      ModalType.CALLBACK,
-      ModalType.MENU
-    );
-
-    nav.removeAttribute('style');
-
+    htmlElement.classList.remove('show-modal');
     document.removeEventListener('keydown', onEscModalClose);
-  };
-
-  const checkNavigationWhenCloseModal = () => {
-    if (nav) {
-      nav.setAttribute('style', 'animation: menu-close 0.2s');
-      setTimeout(closeModal, 200);
-
-      return;
-    }
-
-    closeModal();
   };
 
   /**
@@ -49,7 +27,7 @@
         return;
       }
 
-      checkNavigationWhenCloseModal();
+      closeModal();
     });
   };
 
@@ -58,7 +36,7 @@
    */
   const onEscModalClose = function (evt) {
     if (window.utils.checkEscEvent(evt)) {
-      checkNavigationWhenCloseModal();
+      closeModal();
     }
   };
 
@@ -66,17 +44,8 @@
    * Показывает модальное окно
    * @param {HTMLElement} modal - DOM элемент
    */
-  const showModal = (modalType) => {
+  const showModal = () => {
     htmlElement.classList.add('show-modal');
-
-    switch (modalType) {
-      case ModalType.CALLBACK:
-        htmlElement.classList.add(ModalType.CALLBACK);
-        break;
-      case ModalType.MENU:
-        htmlElement.classList.add(ModalType.MENU);
-        break;
-    }
 
     document.addEventListener('click', closeModalOverlay);
     document.addEventListener('keydown', onEscModalClose);
@@ -86,17 +55,35 @@
     button.addEventListener('click', (evt) => {
       evt.preventDefault();
 
-      checkNavigationWhenCloseModal();
+      closeModal();
     });
   });
 
   linkBackCall.addEventListener('click', (evt) => {
     evt.preventDefault();
-    showModal(ModalType.CALLBACK);
+    showModal();
   });
 
-  buttonOpenMenu.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    showModal(ModalType.MENU);
-  });
+  const closeNav = () => {
+    nav.classList.remove('nav--open');
+
+    document.removeEventListener('keydown', onEscNavClose);
+  };
+
+  const onEscNavClose = function (evt) {
+    if (window.utils.checkEscEvent(evt)) {
+      closeNav();
+    }
+  };
+
+  buttonNavClose.addEventListener('click', closeNav);
+
+  if (nav) {
+    buttonOpenMenu.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      nav.classList.add('nav--open');
+
+      document.addEventListener('keydown', onEscNavClose);
+    });
+  }
 })();

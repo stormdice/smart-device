@@ -44,13 +44,10 @@ $(document).ready(function () {
 'use strict';
 
 (function () {
-  var ModalType = {
-    CALLBACK: 'modal-callback',
-    MENU: 'modal-menu'
-  };
   var htmlElement = document.querySelector('html');
   var modalOverlays = document.querySelectorAll('.modal');
   var buttonModalClose = document.querySelectorAll('.js-modal-close');
+  var buttonNavClose = document.querySelector('.js-nav-close');
   var linkBackCall = document.querySelector('.js-back-call');
   var buttonOpenMenu = document.querySelector('.js-menu');
   var nav = document.querySelector('.nav');
@@ -59,19 +56,8 @@ $(document).ready(function () {
    */
 
   var closeModal = function closeModal() {
-    htmlElement.classList.remove('show-modal', ModalType.CALLBACK, ModalType.MENU);
-    nav.removeAttribute('style');
+    htmlElement.classList.remove('show-modal');
     document.removeEventListener('keydown', onEscModalClose);
-  };
-
-  var checkNavigationWhenCloseModal = function checkNavigationWhenCloseModal() {
-    if (nav) {
-      nav.setAttribute('style', 'animation: menu-close 0.2s');
-      setTimeout(closeModal, 200);
-      return;
-    }
-
-    closeModal();
   };
   /**
    * Функция для обработчика события
@@ -85,7 +71,7 @@ $(document).ready(function () {
         return;
       }
 
-      checkNavigationWhenCloseModal();
+      closeModal();
     });
   };
   /**
@@ -95,7 +81,7 @@ $(document).ready(function () {
 
   var onEscModalClose = function onEscModalClose(evt) {
     if (window.utils.checkEscEvent(evt)) {
-      checkNavigationWhenCloseModal();
+      closeModal();
     }
   };
   /**
@@ -104,19 +90,8 @@ $(document).ready(function () {
    */
 
 
-  var showModal = function showModal(modalType) {
+  var showModal = function showModal() {
     htmlElement.classList.add('show-modal');
-
-    switch (modalType) {
-      case ModalType.CALLBACK:
-        htmlElement.classList.add(ModalType.CALLBACK);
-        break;
-
-      case ModalType.MENU:
-        htmlElement.classList.add(ModalType.MENU);
-        break;
-    }
-
     document.addEventListener('click', closeModalOverlay);
     document.addEventListener('keydown', onEscModalClose);
   };
@@ -124,17 +99,34 @@ $(document).ready(function () {
   buttonModalClose.forEach(function (button) {
     button.addEventListener('click', function (evt) {
       evt.preventDefault();
-      checkNavigationWhenCloseModal();
+      closeModal();
     });
   });
   linkBackCall.addEventListener('click', function (evt) {
     evt.preventDefault();
-    showModal(ModalType.CALLBACK);
+    showModal();
   });
-  buttonOpenMenu.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    showModal(ModalType.MENU);
-  });
+
+  var closeNav = function closeNav() {
+    nav.classList.remove('nav--open');
+    document.removeEventListener('keydown', onEscNavClose);
+  };
+
+  var onEscNavClose = function onEscNavClose(evt) {
+    if (window.utils.checkEscEvent(evt)) {
+      closeNav();
+    }
+  };
+
+  buttonNavClose.addEventListener('click', closeNav);
+
+  if (nav) {
+    buttonOpenMenu.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      nav.classList.add('nav--open');
+      document.addEventListener('keydown', onEscNavClose);
+    });
+  }
 })();
 
 'use strict';

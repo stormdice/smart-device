@@ -39,22 +39,8 @@ img {
 .show-modal {
   overflow-y: hidden;
 
-  &.modal-callback {
-    & #callback {
-      display: flex;
-    }
-  }
-
-  &.modal-menu {
-    & #menu {
-      display: flex;
-
-      & .nav {
-        transform: translateX(0);
-        animation: menu-open $time ease-out;
-        will-change: animation;
-      }
-    }
+  & .modal {
+    display: flex;
   }
 }
 
