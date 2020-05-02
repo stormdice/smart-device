@@ -1,27 +1,28 @@
-'use strict';
-
 const gulp = require('gulp');
+
+const { src, dest, series, watch, parallel } = gulp;
+
 const plumber = require('gulp-plumber');
 const sourcemap = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const server = require('browser-sync').create();
 const csso = require('gulp-csso');
 const rename = require('gulp-rename');
-const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
-const svgstore = require('gulp-svgstore');
-const posthtml = require('gulp-posthtml');
-const include = require('posthtml-include');
+const browserSync = require('browser-sync').create();
 const del = require('del');
-const concat = require('gulp-concat');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
+const webpack = require('webpack-stream');
+const svgstore = require('gulp-svgstore');
 
-gulp.task('css', function() {
-  return gulp
-    .src('source/sass/style.scss')
+const sprite = () =>
+  src('src/img/sprite/*.svg')
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(rename('sprite.svg'))
+    .pipe(dest('build/img'));
+
+const styles = () =>
+  src('src/sass/style.scss')
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
@@ -29,106 +30,83 @@ gulp.task('css', function() {
     .pipe(csso())
     .pipe(rename('style.min.css'))
     .pipe(sourcemap.write('.'))
-    .pipe(gulp.dest('build/css'))
-    .pipe(server.stream());
-});
+    .pipe(dest('build/css'))
+    .pipe(browserSync.stream());
 
-gulp.task('server', function() {
-  server.init({
+const scripts = () =>
+  src('src/js/*.js')
+    .pipe(plumber())
+    .pipe(
+      webpack({
+        mode: 'production',
+        output: {
+          filename: 'index.js',
+        },
+        module: {
+          rules: [
+            {
+              test: /\.js$/,
+              exclude: /node_modules/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/preset-env'],
+                },
+              },
+            },
+          ],
+        },
+        externals: {
+          jquery: 'jQuery',
+        },
+      })
+    )
+    .pipe(dest('build/js/'))
+    .pipe(browserSync.stream());
+
+const createWebp = () =>
+  src('source/img/content/**/*.{png,jpg}')
+    .pipe(webp({ quality: 90 }))
+    .pipe(dest('build/img/content'));
+
+const updateHtml = () =>
+  src('src/*.html', {
+    base: 'src',
+  }).pipe(dest('build'));
+
+const copyAssets = () =>
+  src(
+    ['src/*.html', 'src/img/**', 'src/fonts/**/*.{woff,woff2}', 'src//*.ico'],
+    {
+      base: 'src',
+    }
+  ).pipe(dest('build'));
+
+const clean = () => del('build');
+
+const reload = (done) => {
+  browserSync.reload();
+  done();
+};
+
+const browserSyncServer = () => {
+  browserSync.init({
     server: 'build/',
     notify: false,
     open: true,
     cors: true,
-    ui: false
+    ui: false,
   });
 
-  gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('css'));
-  gulp.watch('source/img/icon-*.svg', gulp.series('sprite', 'html', 'refresh'));
-  gulp.watch('source/*.html', gulp.series('html', 'refresh'));
-  gulp.watch('source/js/*.js', gulp.series('js', 'refresh'));
-});
+  watch('src/*.html', series(updateHtml, reload));
+  watch('src/sass/**/*.{scss,sass}', styles);
+  watch('src/img/sprite/*.svg', series(sprite, reload));
+  watch('src/js/**', scripts);
+};
 
-gulp.task('refresh', function(done) {
-  server.reload();
-  done();
-});
+const build = series(clean, parallel(copyAssets, sprite, styles, scripts));
+const start = series(build, browserSyncServer);
 
-gulp.task('images', function() {
-  return gulp
-    .src('source/img/**/*.{png,jpg,svg}')
-    .pipe(
-      imagemin([
-        imagemin.optipng({ optimizationLevel: 3 }),
-        imagemin.jpegtran({ progressive: true }),
-        imagemin.svgo()
-      ])
-    )
-
-    .pipe(gulp.dest('source/img'));
-});
-
-gulp.task('webp', function() {
-  return gulp
-    .src('source/img/**/*.{png,jpg}')
-    .pipe(webp({ quality: 90 }))
-    .pipe(gulp.dest('source/img'));
-});
-
-gulp.task('sprite', function() {
-  return gulp
-    .src('source/img/sprite/*.svg')
-    .pipe(svgstore({ inlineSvg: true }))
-    .pipe(rename('sprite.svg'))
-    .pipe(gulp.dest('build/img'));
-});
-
-gulp.task('html', function() {
-  return gulp
-    .src('source/*.html')
-    .pipe(posthtml([include()]))
-    .pipe(gulp.dest('build'));
-});
-
-gulp.task('copy', function() {
-  return gulp
-    .src(['source/fonts/**/*.{woff,woff2}', 'source/img/**', 'source//*.ico'], {
-      base: 'source'
-    })
-    .pipe(gulp.dest('build'));
-});
-
-gulp.task('js', function() {
-  return gulp
-    .src('source/js/*.js')
-    .pipe(plumber())
-    .pipe(concat('script.js'))
-    .pipe(
-      babel({
-        presets: ['@babel/env']
-      })
-    )
-    .pipe(gulp.dest('build/js'))
-    .pipe(uglify())
-    .pipe(rename("script.min.js"))
-
-    .pipe(gulp.dest('build/js'));
-});
-
-gulp.task('js-vendor', () => {
-  return gulp
-    .src(['source/js/vendor/jquery.min.js', 'source/js/vendor/*.js'])
-    .pipe(plumber())
-    .pipe(concat('vendor.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('build/js'));
-});
-
-gulp.task('clean', function() {
-  return del('build');
-});
-
-gulp.task(
-  'build',
-  gulp.series('clean', 'copy', 'js', 'js-vendor', 'css', 'sprite', 'html')
-);
-gulp.task('start', gulp.series('build', 'server'));
+exports.createWebp = createWebp;
+exports.build = build;
+exports.start = start;

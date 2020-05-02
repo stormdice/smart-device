@@ -45,14 +45,7 @@
 }
 
 .about__text-container {
-  position: relative;
-  max-height: 152px;
   margin-bottom: 39px;
-  overflow: hidden;
-
-  &--height {
-    max-height: none;
-  }
 
   & p {
     margin-top: 0;
@@ -64,23 +57,7 @@
   }
 
   @media (max-width: $desktop-width) {
-    max-height: 194px;
     margin-bottom: 43px;
-
-    &::before {
-      position: absolute;
-      bottom: 0;
-      right: 4px;
-      content: "..";
-    }
-
-    &--height {
-      max-height: 2000px;
-
-      &::before {
-        content: none;
-      }
-    }
 
     & p {
       margin-bottom: 20px;
@@ -90,50 +67,12 @@
   }
 
   @media (max-width: $tablet-width) {
-    max-height: 345px;
     margin-bottom: 31px;
-
-    &::before {
-      right: 0;
-      width: 53%;
-      height: 21px;
-      background-color: white;
-      content: none;
-    }
-
-    &--height {
-      max-height: none;
-
-      &::before {
-        content: none;
-      }
-    }
 
     & p {
       margin-bottom: 41px;
       padding-right: 0;
       padding-left: 3px;
-    }
-  }
-
-  @media (max-width: 400px) {
-    &::before {
-      content: "..";
-      width: 21%;
-    }
-
-    &--height {
-      max-height: none;
-
-      &::before {
-        content: none;
-      }
-    }
-  }
-
-  @media (max-width: 375px) {
-    &::before {
-      width: 53%;
     }
   }
 }
