@@ -1,6 +1,6 @@
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
-import Inputmask from 'inputmask';
 import checkEscEvent from './utils';
+import './input-masks';
 
 const htmlElement = document.querySelector('html');
 const modalOverlays = document.querySelectorAll('.modal');
@@ -9,12 +9,6 @@ const buttonNavClose = document.querySelector('.js-nav-close');
 const linkBackCall = document.querySelector('.js-back-call');
 const buttonOpenMenu = document.querySelector('.js-menu');
 const nav = document.querySelector('.nav');
-const inputPhones = document.querySelectorAll('.js-tel');
-const im = new Inputmask('+7 (999)999-99-99');
-
-inputPhones.forEach((phone) => {
-  im.mask(phone);
-});
 
 /**
  * Закрывает модальное окно
@@ -30,13 +24,15 @@ const closeModal = () => {
  * @param {Object} evt - глобальный объект Event
  */
 const closeModalOverlay = (evt) => {
-  modalOverlays.forEach((modal) => {
+  for (let i = 0; i < modalOverlays.length; i += 1) {
+    const modal = modalOverlays[i];
+
     if (evt.target !== modal) {
       return;
     }
 
     closeModal();
-  });
+  }
 };
 
 /**
@@ -60,13 +56,15 @@ const showModal = () => {
   document.addEventListener('keydown', onEscModalClose);
 };
 
-buttonModalClose.forEach((button) => {
+for (let i = 0; i < buttonModalClose.length; i += 1) {
+  const button = buttonModalClose[i];
+
   button.addEventListener('click', (evt) => {
     evt.preventDefault();
 
     closeModal();
   });
-});
+}
 
 linkBackCall.addEventListener('click', (evt) => {
   evt.preventDefault();
@@ -100,9 +98,13 @@ const footer = document.querySelector('.footer');
 const footerNavButtons = document.querySelectorAll('.js-open-footer-nav');
 
 if (footerNavButtons.length) {
-  footerNavButtons.forEach((button) => {
+  for (let i = 0; i < footerNavButtons.length; i += 1) {
+    const button = footerNavButtons[i];
+
     button.addEventListener('click', () => {
-      const thisFooterContent = button.closest('.footer__content');
+      const thisFooterContent = button.parentElement.parentElement.parentElement.querySelector(
+        '.footer__content'
+      );
 
       if (thisFooterContent.classList.contains('footer__content--show-nav')) {
         thisFooterContent.classList.remove('footer__content--show-nav');
@@ -116,5 +118,5 @@ if (footerNavButtons.length) {
         thisFooterContent.classList.add('footer__content--show-nav');
       }
     });
-  });
+  }
 }
