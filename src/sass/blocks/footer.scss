@@ -13,9 +13,9 @@
 }
 
 .footer__form-container {
-  display: grid;
-  grid-template-columns: 1fr 570px;
-  column-gap: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   max-width: 1570px;
   padding-top: 92px;
   padding-right: 200px;
@@ -47,6 +47,7 @@
 
 .footer__form-img {
   display: block;
+  width: 52%;
   transform: translateY(-23%);
   transition: transform $time;
 

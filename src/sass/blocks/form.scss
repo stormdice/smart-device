@@ -1,4 +1,7 @@
 .form {
+  width: 48%;
+  margin-left: auto;
+  padding-left: 60px;
   background-color: $color-blue;
   color: white;
 
@@ -10,6 +13,7 @@
   @media (max-width: $desktop-width) {
     margin-right: auto;
     margin-left: auto;
+    padding-left: 0;
     width: 590px;
     transition: width $time;
   }
@@ -67,6 +71,7 @@
 .form__container {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
 
   &--modal {
@@ -157,7 +162,8 @@
 }
 
 .form__data-processing {
-  width: 261px;
+  width: 50%;
+  padding-left: 30px;
   padding-top: 8px;
 
   &--modal {

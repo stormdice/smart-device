@@ -42,10 +42,11 @@ const scripts = () =>
     .pipe(plumber())
     .pipe(
       webpack({
-        mode: 'production',
+        mode: 'development',
         output: {
           filename: 'index.js',
         },
+        devtool: 'source-map',
         module: {
           rules: [
             {
@@ -54,18 +55,23 @@ const scripts = () =>
               use: {
                 loader: 'babel-loader',
                 options: {
-                  presets: ['@babel/preset-env'],
+                  presets: [
+                    [
+                      '@babel/env',
+                      {
+                        corejs: 3,
+                        useBuiltIns: 'usage',
+                      },
+                    ],
+                  ],
                 },
               },
             },
           ],
         },
-        externals: {
-          jquery: 'jQuery',
-        },
       })
     )
-    .pipe(dest('build/js'))
+    .pipe(dest('build/js/'))
     .pipe(browserSync.stream());
 
 const createWebp = () =>

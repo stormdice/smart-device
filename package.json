@@ -7,13 +7,16 @@
     "start": "gulp start"
   },
   "browserslist": [
-    "last 2 Chrome version",
-    "last 2 Safari version",
-    "last 2 Firefox version",
+    "last 12 Chrome version",
     "last 2 Opera version",
-    "last 2 Edge version",
+    "last 1 ChromeAndroid version",
     "iOS >= 12",
-    "not dead"
+    "last 2 Samsung version",
+    "last 2 Edge version",
+    "last 2 Firefox version",
+    "last 4 Safari version",
+    "> 1%",
+    "IE 11"
   ],
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -36,12 +39,13 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-svgstore": "7.0.1",
     "gulp-webp": "4.0.1",
-    "jquery": "3.5.0",
     "stylelint": "13.0.0",
     "stylelint-config-htmlacademy": "0.1.4",
     "webpack-stream": "5.2.1"
   },
   "dependencies": {
+    "core-js": "^3.6.5",
+    "jquery": "3.5.0",
     "del": "5.1.0",
     "inputmask": "^5.0.3",
     "scroll-lock": "^2.1.4"
