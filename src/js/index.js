@@ -1,6 +1,6 @@
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import Inputmask from 'inputmask';
-import { checkEscEvent } from './utils';
+import checkEscEvent from './utils';
 
 const htmlElement = document.querySelector('html');
 const modalOverlays = document.querySelectorAll('.modal');

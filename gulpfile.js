@@ -14,6 +14,7 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const webpack = require('webpack-stream');
 const svgstore = require('gulp-svgstore');
+const concat = require('gulp-concat');
 
 const sprite = () =>
   src('src/img/sprite/*.svg')
@@ -32,6 +33,9 @@ const styles = () =>
     .pipe(sourcemap.write('.'))
     .pipe(dest('build/css'))
     .pipe(browserSync.stream());
+
+const vendorScripts = () =>
+  src('src/js/vendor/*.js').pipe(concat('vendor.js')).pipe(dest('build/js'));
 
 const scripts = () =>
   src('src/js/*.js')
@@ -61,7 +65,7 @@ const scripts = () =>
         },
       })
     )
-    .pipe(dest('build/js/'))
+    .pipe(dest('build/js'))
     .pipe(browserSync.stream());
 
 const createWebp = () =>
@@ -104,7 +108,10 @@ const browserSyncServer = () => {
   watch('src/js/**', scripts);
 };
 
-const build = series(clean, parallel(copyAssets, sprite, styles, scripts));
+const build = series(
+  clean,
+  parallel(copyAssets, sprite, styles, vendorScripts, scripts)
+);
 const start = series(build, browserSyncServer);
 
 exports.createWebp = createWebp;

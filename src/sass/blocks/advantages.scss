@@ -23,6 +23,9 @@
   margin-right: 30px;
   margin-bottom: 30px;
   padding: 38px 42px;
+
+  color: $color-blue;
+
   background-color: white;
   border-top: 1px solid $color-gray;
   border-right: 1px solid $color-gray;
@@ -45,9 +48,9 @@
     transition: background-color $time, color $time;
   }
 
-  &:hover svg {
-    fill: white;
-    transition: fill $time;
+  &:hover p {
+    color: white;
+    transition: color $time;
   }
 
   &:hover h3 {
@@ -58,8 +61,6 @@
   & svg {
     display: block;
     margin-bottom: 19px;
-    fill: $color-blue;
-    transition: fill $time;
 
     @media (max-width: $tablet-width) {
       margin-bottom: 12px;
@@ -80,6 +81,7 @@
   & p {
     margin-top: 0;
     margin-bottom: 0;
+    color: $color-black;
   }
 
   &--confidentiality {

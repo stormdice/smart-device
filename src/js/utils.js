@@ -9,4 +9,4 @@ const checkEscEvent = function (evt) {
   return evt.keyCode === ESC_KEYCODE;
 };
 
-export { checkEscEvent };
+export default checkEscEvent;
