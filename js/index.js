@@ -5284,7 +5284,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_for_each_polyfill_ie11__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_vendor_for_each_polyfill_ie11__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _vendor_intersection_observer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./vendor/intersection-observer */ "./src/js/vendor/intersection-observer.js");
 /* harmony import */ var _vendor_intersection_observer__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_vendor_intersection_observer__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _input_masks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./input-masks */ "./src/js/input-masks.js");
+/* harmony import */ var _modules_input_masks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/input-masks */ "./src/js/modules/input-masks.js");
 /* harmony import */ var _modules_observer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/observer */ "./src/js/modules/observer.js");
 /* harmony import */ var _modules_observer__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_observer__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
@@ -5304,28 +5304,6 @@ var linkBackCall = document.querySelector('.js-open-modal-backcall');
 
 if (linkBackCall) {
   linkBackCall.addEventListener('click', _modules_modal__WEBPACK_IMPORTED_MODULE_5__["showModal"]);
-}
-
-/***/ }),
-
-/***/ "./src/js/input-masks.js":
-/*!*******************************!*\
-  !*** ./src/js/input-masks.js ***!
-  \*******************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
-/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_0__);
-
-var inputPhones = document.querySelectorAll('.js-tel');
-var im = new inputmask__WEBPACK_IMPORTED_MODULE_0___default.a('+7 (999)999-99-99');
-
-for (var i = 0; i < inputPhones.length; i += 1) {
-  var phone = inputPhones[i];
-  im.mask(phone);
 }
 
 /***/ }),
@@ -5366,6 +5344,28 @@ var initMobileAccordeonInFooter = function initMobileAccordeonInFooter() {
 };
 
 
+
+/***/ }),
+
+/***/ "./src/js/modules/input-masks.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/input-masks.js ***!
+  \***************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
+/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_0__);
+
+var inputPhones = document.querySelectorAll('.js-tel');
+var im = new inputmask__WEBPACK_IMPORTED_MODULE_0___default.a('+7 (999)999-99-99');
+
+for (var i = 0; i < inputPhones.length; i += 1) {
+  var phone = inputPhones[i];
+  im.mask(phone);
+}
 
 /***/ }),
 
