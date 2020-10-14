@@ -36,14 +36,6 @@ img {
   @include visually-hidden();
 }
 
-.show-modal {
-  overflow-y: hidden;
-
-  & .modal {
-    display: flex;
-  }
-}
-
 @keyframes menu-open {
   from {
     transform: translateX(-100%);

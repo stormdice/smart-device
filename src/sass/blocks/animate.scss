@@ -1,0 +1,33 @@
+.animate-opacity {
+  opacity: 0;
+}
+
+.animate-to-right {
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity $time-long, transform $time-long;
+}
+
+.animate-to-left {
+  opacity: 0;
+  transform: translateX(50%);
+  transition: opacity $time-long, transform $time-long;
+}
+
+.animate-to-bottom {
+  opacity: 0;
+  transform: translateY(30%);
+  transition: opacity $time-long, transform $time-long;
+}
+
+.animate-to-bottom-right {
+  opacity: 0;
+  transform: translate(-50%, 50%);
+  transition: opacity $time-long, transform $time-long;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity $time-long, transform $time-long;
+}

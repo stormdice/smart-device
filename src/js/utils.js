@@ -5,8 +5,8 @@ const ESC_KEYCODE = 27;
  * @param {Object} evt - интерфейс событий
  * @return {Object} evt - элемент интерфейса событий
  */
-const checkEscEvent = function (evt) {
+const checkEscEvent = (evt) => {
   return evt.keyCode === ESC_KEYCODE;
 };
 
-export default checkEscEvent;
+export { checkEscEvent };

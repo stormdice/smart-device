@@ -48,13 +48,6 @@
 .footer__form-img {
   display: block;
   width: 52%;
-  transform: translateY(-23%);
-  transition: transform $time;
-
-  @media (max-width: 1300px) {
-    transform: translateY(-10%);
-    transition: transform $time;
-  }
 
   @media (max-width: $desktop-width) {
     display: none;

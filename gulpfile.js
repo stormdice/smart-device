@@ -38,7 +38,7 @@ const vendorScripts = () =>
   src('src/js/vendor/*.js').pipe(concat('vendor.js')).pipe(dest('build/js'));
 
 const scripts = () =>
-  src('src/js/*.js')
+  src('src/js/index.js')
     .pipe(plumber())
     .pipe(
       webpack({
@@ -57,10 +57,10 @@ const scripts = () =>
                 options: {
                   presets: [
                     [
-                      '@babel/env',
+                      '@babel/preset-env',
                       {
                         corejs: 3,
-                        useBuiltIns: 'usage',
+                        useBuiltIns: 'entry',
                       },
                     ],
                   ],

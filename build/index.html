@@ -1,429 +1,318 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="Description" content="Put your description here." />
-    <title>Smart Device умные технологии</title>
-    <link rel="stylesheet" href="css/style.min.css" />
-  </head>
-  <body>
-    <div style="display: none;">
-      <include src="build/img/sprite.svg"></include>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="Description" content="Put your description here." />
+  <title>Smart Device умные технологии</title>
+  <link rel="stylesheet" href="css/style.min.css" />
+</head>
+
+<body>
+  <div style="display: none;">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__top">
+        <a class="logo">
+          <img class="logo__img" src="img/content/logo.svg" alt="логотип Smart Device" />
+          <div class="logo__container logo__container--header">
+            <span class="logo__text">Smart Device</span>
+            <svg width="110" height="10">
+              <use xlink:href="#logo-text"></use>
+            </svg>
+          </div>
+        </a>
+        <button class="menu js-menu" type="button">
+          <span>меню</span>
+        </button>
+        <a class="header__contacts header__contacts--email" href="mailto:info@sd.ru"
+          aria-label="Наш адрес электронной почты">
+          <svg width="19" height="14" aria-hidden="true">
+            <use xlink:href="#message"></use>
+          </svg>
+          <span>info@sd.ru</span>
+        </a>
+        <a class="header__contacts header__contacts--tel" href="tel:+74950005252" aria-label="Наш телефон">
+          <svg width="18" height="18" aria-hidden="true">
+            <use xlink:href="#phone-call"></use>
+          </svg>
+          <span>+7 (495) 000 52 52</span></a>
+        <button class="btn header__order js-open-modal-backcall" type="button"
+          data-target-modal="modal-backcall">Заказать
+          звонок</a>
+      </div>
+      <section class="promo animate-to-right">
+        <h2>Печатные платы</h2>
+        <p>
+          производство и монтаж, поставка комплектующих, блоков и модулей
+        </p>
+        <a class="btn promo__consultation" href="https://github.com/stormdice/smart-device">
+          <span class="promo__consultation-text">бесплатная консультация</span>
+          <span class="promo__consultation-text">Получить бесплатную консультацию</span>
+        </a>
+      </section>
+      <a class="header__scroll js-scroll-down" href="#advantages">Скролл вниз</a>
     </div>
-    <header class="header">
-      <div class="header__container">
-        <div class="header__top">
-          <a class="logo">
-            <img
-              class="logo__img"
-              src="img/content/logo.svg"
-              alt="логотип Smart Device"
-            />
-            <div class="logo__container logo__container--header">
-              <span class="logo__text">Smart Device</span>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a class="nav__item" href="https://github.com/stormdice/smart-device">О компании</a></li>
+        <li><a class="nav__item" href="https://github.com/stormdice/smart-device">Продукты</a></li>
+        <li>
+          <a class="nav__item" href="https://github.com/stormdice/smart-device">Производство печатных плат</a>
+        </li>
+        <li><a class="nav__item" href="https://github.com/stormdice/smart-device">Монтаж печатных плат</a></li>
+        <li><a class="nav__item" href="https://github.com/stormdice/smart-device">Комплектующие</a></li>
+        <li><a class="nav__item" href="https://github.com/stormdice/smart-device">Доставка</a></li>
+        <li><a class="nav__item" href="https://github.com/stormdice/smart-device">Контакты</a></li>
+      </ul>
+      <button class="modal__close modal__close--big js-nav-close" type="button" aria-label="закрыть"></button>
+    </nav>
+  </header>
+  <main class="main">
+    <h1 class="visually-hidden">Smart Device умные технологии</h1>
+    <div class="container">
+      <ul class="advantages" id="advantages">
+        <li class="advantages__item advantages__item--terms animate-opacity">
+          <svg width="29" height="35">
+            <use xlink:href="img/sprite.svg#stopwatch"></use>
+          </svg>
+          <h3>Оперативные сроки</h3>
+          <p>
+            Усовершенствованная логистическая система позволяет нам
+            просчитывать стоимость, производить и доставлять заказы плат и
+            комплектующих в самые короткие сроки
+          </p>
+        </li>
+        <li class="advantages__item advantages__item--suppliers animate-opacity">
+          <svg width="35" height="35">
+            <use xlink:href="img/sprite.svg#hired"></use>
+          </svg>
+          <h3>Крупные поставщики</h3>
+          <p>
+            Нашими поставщиками являются такие крупные мировые компании как:
+            OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими
+            компаниями обеспичивает хорошее качество нашей продукции.
+          </p>
+        </li>
+        <li class="advantages__item advantages__item--confidentiality animate-opacity">
+          <svg width="36" height="31">
+            <use xlink:href="img/sprite.svg#detective"></use>
+          </svg>
+          <h3>Полная конфиденциальность</h3>
+          <p>
+            По желанию клиента мы обеспечиваем полную конфеденциальность.
+          </p>
+        </li>
+        <li class="advantages__item advantages__item--personalization animate-opacity">
+          <svg width="35" height="35">
+            <use xlink:href="img/sprite.svg#tag"></use>
+          </svg>
+          <h3>Персонализация стоимости</h3>
+          <p>
+            Мы подбираем определенную фабрику, поставщиков, вид доставки,
+            чтобы установить ту цену, которая Вас устраивает.
+          </p>
+        </li>
+      </ul>
+      <section class="about animate-to-bottom">
+        <h2>О компании</h2>
+        <div class="about__text-container">
+          <p>
+            Мы поставляем электронные комплектующие, производим печатные платы
+            и предоставляем мировые технологии с 1997 года. Выполняем срочные
+            заказы и пилотные образцы до 10 дней.
+          </p>
+          <p>
+            Наши поставщики - мировые производители электронных компонентов:
+            OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие
+            Service Devices применяются на предприятиях Российских Железных
+            Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома,
+            СпецМедТехники. Среди наших клиентов крупнейшие Производители
+            светотехники России.
+          </p>
+        </div>
+        <a class="btn about__more" href="https://github.com/stormdice/smart-device">Подробнее</a>
+      </section>
+    </div>
+    <section class="services">
+      <div class="container">
+        <h2>
+          Service Device предлагает следующие товары и услуги
+        </h2>
+        <ul class="services__list">
+          <li class="services__item animate-to-right">
+            <a class="services__link" href="https://github.com/stormdice/smart-device">Производство печатных плат</a>
+          </li>
+          <li class="services__item animate-to-bottom">
+            <a class="services__link services__link--installation"
+              href="https://github.com/stormdice/smart-device">Монтаж печатных плат</a>
+          </li>
+          <li class="services__item animate-to-left">
+            <a class="services__link services__link--components"
+              href="https://github.com/stormdice/smart-device">Комплектующие для светотехники</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <section class="footer__form">
+      <div class="container footer__form-container">
+        <img class="footer__form-img animate-to-bottom-right" src="img/airplane@1x.png" alt="" aria-hidden="true" />
+        <form class="form" action="#">
+          <h2 class="form__title">Остались вопросы? Задайте их нам!</h2>
+          <p class="form__text">Мы проконсультируем Вас бесплатно</p>
+          <div class="form__container">
+            <label class="form__label form__label--small">
+              <span class="visually-hidden">Имя</span>
+              <input class="form__input js-text-only" type="text" name="name" minlength="3" maxlength="256"
+                placeholder="Имя" required />
+            </label>
+            <label class="form__label form__label--small">
+              <span class="visually-hidden">Телефон</span>
+              <input class="form__input js-tel" type="tel" name="tel" placeholder="Телефон" required />
+            </label>
+          </div>
+          <label class="form__label form__label--textarea">
+            <span class="visually-hidden">Задать вопрос</span>
+            <textarea class="form__question" name="question" placeholder="Ваш вопрос"></textarea>
+          </label>
+          <div class="form__container">
+            <button class="btn form__ask-question" type="submit">
+              Задать вопрос
+            </button>
+            <div class="form__data-processing">
+              <input id="personal-data-processing" type="checkbox" checked />
+              <label class="form__data-processing-text" for="personal-data-processing">Я согласен на обработку
+                персональных данных</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="footer__bottom">
+      <div class="container footer__container footer__container--content">
+        <div class="footer__socials">
+          <a class="logo logo--footer" href="https://github.com/stormdice/smart-device">
+            <img class="logo__img logo__img--footer" src="img/content/logo.svg" alt="логотип Smart Device" />
+            <div class="logo__container logo__container--footer">
+              <span class="logo__text logo__text--footer">Service Device</span>
               <svg width="110" height="10">
                 <use xlink:href="#logo-text"></use>
               </svg>
             </div>
           </a>
-          <button class="menu js-menu" type="button">
-            <span>меню</span>
-          </button>
-          <a
-            class="header__contacts header__contacts--email"
-            href="mailto:info@sd.ru"
-            aria-label="Наш адрес электронной почты"
-          >
-            <svg width="19" height="14" aria-hidden="true">
-              <use xlink:href="#message"></use>
-            </svg>
-            <span>info@sd.ru</span>
-          </a>
-          <a
-            class="header__contacts header__contacts--tel"
-            href="tel:+74950005252"
-            aria-label="Наш телефон"
-          >
-            <svg width="18" height="18" aria-hidden="true">
-              <use xlink:href="#phone-call"></use>
-            </svg>
-            <span>+7 (495) 000 52 52</span></a
-          >
-          <a class="btn header__order js-back-call" href="#">Заказать звонок</a>
-        </div>
-        <section class="promo">
-          <h2>Печатные платы</h2>
-          <p>
-            производство и монтаж, поставка комплектующих, блоков и модулей
-          </p>
-          <a class="btn promo__consultation" href="#">
-            <span class="promo__consultation-text"
-              >бесплатная консультация</span
-            >
-            <span class="promo__consultation-text"
-              >Получить бесплатную консультацию</span
-            >
-          </a>
-        </section>
-        <a class="header__scroll js-scroll-down" href="#advantages"
-          >Скролл вниз</a
-        >
-      </div>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a class="nav__item" href="#">О компании</a></li>
-          <li><a class="nav__item" href="#">Продукты</a></li>
-          <li>
-            <a class="nav__item" href="#">Производство печатных плат</a>
-          </li>
-          <li><a class="nav__item" href="#">Монтаж печатных плат</a></li>
-          <li><a class="nav__item" href="#">Комплектующие</a></li>
-          <li><a class="nav__item" href="#">Доставка</a></li>
-          <li><a class="nav__item" href="#">Контакты</a></li>
-        </ul>
-        <button
-          class="modal__close modal__close--big js-nav-close"
-          type="button"
-          aria-label="закрыть"
-        ></button>
-      </nav>
-    </header>
-    <main class="main">
-      <h1 class="visually-hidden">Smart Device умные технологии</h1>
-      <div class="container">
-        <ul class="advantages" id="advantages">
-          <li class="advantages__item advantages__item--terms">
-            <svg width="29" height="35">
-              <use xlink:href="img/sprite.svg#stopwatch"></use>
-            </svg>
-            <h3>Оперативные сроки</h3>
-            <p>
-              Усовершенствованная логистическая система позволяет нам
-              просчитывать стоимость, производить и доставлять заказы плат и
-              комплектующих в самые короткие сроки
-            </p>
-          </li>
-          <li class="advantages__item advantages__item--suppliers">
-            <svg width="35" height="35">
-              <use xlink:href="img/sprite.svg#hired"></use>
-            </svg>
-            <h3>Крупные поставщики</h3>
-            <p>
-              Нашими поставщиками являются такие крупные мировые компании как:
-              OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими
-              компаниями обеспичивает хорошее качество нашей продукции.
-            </p>
-          </li>
-          <li class="advantages__item advantages__item--confidentiality">
-            <svg width="36" height="31">
-              <use xlink:href="img/sprite.svg#detective"></use>
-            </svg>
-            <h3>Полная конфиденциальность</h3>
-            <p>
-              По желанию клиента мы обеспечиваем полную конфеденциальность.
-            </p>
-          </li>
-          <li class="advantages__item advantages__item--personalization">
-            <svg width="35" height="35">
-              <use xlink:href="img/sprite.svg#tag"></use>
-            </svg>
-            <h3>Персонализация стоимости</h3>
-            <p>
-              Мы подбираем определенную фабрику, поставщиков, вид доставки,
-              чтобы установить ту цену, которая Вас устраивает.
-            </p>
-          </li>
-        </ul>
-        <section class="about">
-          <h2>О компании</h2>
-          <div class="about__text-container">
-            <p>
-              Мы поставляем электронные комплектующие, производим печатные платы
-              и предоставляем мировые технологии с 1997 года. Выполняем срочные
-              заказы и пилотные образцы до 10 дней.
-            </p>
-            <p>
-              Наши поставщики - мировые производители электронных компонентов:
-              OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие
-              Service Devices применяются на предприятиях Российских Железных
-              Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома,
-              СпецМедТехники. Среди наших клиентов крупнейшие Производители
-              светотехники России.
-            </p>
-          </div>
-          <a class="btn about__more" href="#">Подробнее</a>
-        </section>
-      </div>
-      <section class="services">
-        <div class="container">
-          <h2>
-            Service Device предлагает следующие товары и услуги
-          </h2>
-          <ul class="services__list">
-            <li class="services__item">
-              <a class="services__link" href="#">Производство печатных плат</a>
+          <p>1999-2018 SD Service Devices</p>
+          <ul class="social">
+            <li>
+              <a href="https://github.com/stormdice/smart-device" aria-label="мы в Фейсбуке" rel="noreferrer"
+                target="_blank">
+                <svg class="social__icon social__icon--fb" width="27" height="27">
+                  <use xlink:href="#fb"></use>
+                </svg>
+              </a>
             </li>
-            <li class="services__item">
-              <a class="services__link services__link--installation" href="#"
-                >Монтаж печатных плат</a
-              >
+            <li>
+              <a href="https://github.com/stormdice/smart-device" aria-label="мы в Одноклассниках" rel="noreferrer"
+                target="_blank">
+                <svg class="social__icon social__icon--od" width="27" height="26">
+                  <use xlink:href="#od"></use>
+                </svg>
+              </a>
             </li>
-            <li class="services__item">
-              <a class="services__link services__link--components" href="#"
-                >Комплектующие для светотехники</a
-              >
+            <li>
+              <a href="https://github.com/stormdice/smart-device" aria-label="мы в Вконтакте" rel="noreferrer"
+                target="_blank">
+                <svg class="social__icon social__icon--vk" width="27" height="26">
+                  <use xlink:href="#vk"></use>
+                </svg>
+              </a>
             </li>
           </ul>
         </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <section class="footer__form">
-        <div class="container footer__form-container">
-          <img
-            class="footer__form-img"
-            src="img/airplane@1x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <form class="form" action="#">
-            <h2 class="form__title">Остались вопросы? Задайте их нам!</h2>
-            <p class="form__text">Мы проконсультируем Вас бесплатно</p>
-            <div class="form__container">
-              <label class="form__label form__label--small">
-                <span class="visually-hidden">Имя</span>
-                <input
-                  class="form__input js-text-only"
-                  type="text"
-                  name="name"
-                  minlength="3"
-                  maxlength="256"
-                  placeholder="Имя"
-                  required
-                />
-              </label>
-              <label class="form__label form__label--small">
-                <span class="visually-hidden">Телефон</span>
-                <input
-                  class="form__input js-tel"
-                  type="tel"
-                  name="tel"
-                  placeholder="Телефон"
-                  required
-                />
-              </label>
-            </div>
-            <label class="form__label form__label--textarea">
-              <span class="visually-hidden">Задать вопрос</span>
-              <textarea
-                class="form__question"
-                name="question"
-                placeholder="Ваш вопрос"
-              ></textarea>
-            </label>
-            <div class="form__container">
-              <button class="btn form__ask-question" type="submit">
-                Задать вопрос
-              </button>
-              <div class="form__data-processing">
-                <input id="personal-data-processing" type="checkbox" checked />
-                <label
-                  class="form__data-processing-text"
-                  for="personal-data-processing"
-                  >Я согласен на обработку персональных данных</label
-                >
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
-      <div class="footer__bottom">
-        <div class="container footer__container footer__container--content">
-          <div class="footer__socials">
-            <a class="logo logo--footer" href="#">
-              <img
-                class="logo__img logo__img--footer"
-                src="img/content/logo.svg"
-                alt="логотип Smart Device"
-              />
-              <div class="logo__container logo__container--footer">
-                <span class="logo__text logo__text--footer"
-                  >Service Device</span
-                >
-                <svg width="110" height="10">
-                  <use xlink:href="#logo-text"></use>
-                </svg>
-              </div>
-            </a>
-            <p>1999-2018 SD Service Devices</p>
-            <ul class="social">
-              <li>
-                <a
-                  href="#"
-                  aria-label="мы в Фейсбуке"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <svg
-                    class="social__icon social__icon--fb"
-                    width="27"
-                    height="27"
-                  >
-                    <use xlink:href="#fb"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  aria-label="мы в Одноклассниках"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <svg
-                    class="social__icon social__icon--od"
-                    width="27"
-                    height="26"
-                  >
-                    <use xlink:href="#od"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  aria-label="мы в Вконтакте"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <svg
-                    class="social__icon social__icon--vk"
-                    width="27"
-                    height="26"
-                  >
-                    <use xlink:href="#vk"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer__nav">
-            <div class="footer__content">
-              <h3>
-                Разделы сайта
-                <button
-                  class="footer__button-open-nav js-open-footer-nav"
-                  type="button"
-                >
-                  <span class="visually-hidden">Открыть/Закрыть список</span>
-                </button>
-              </h3>
-              <ul class="footer__nav-list">
-                <li><a href="#">О компании</a></li>
-                <li><a href="#">Продукты</a></li>
-                <li><a href="#">Производство печатных плат</a></li>
-                <li><a href="#">Монтаж печатных плат</a></li>
-                <li><a href="#">Комплектующие</a></li>
-                <li><a href="#">Доставка</a></li>
-                <li><a href="#">Контакты</a></li>
-              </ul>
-            </div>
-            <div class="footer__content">
-              <h3>Наш офис</h3>
-              <button
-                class="footer__button-open-nav js-open-footer-nav"
-                type="button"
-              >
+        <div class="footer__nav">
+          <div class="footer__content">
+            <h3>
+              Разделы сайта
+              <button class="footer__button-open-nav js-open-footer-nav" type="button">
                 <span class="visually-hidden">Открыть/Закрыть список</span>
               </button>
-              <ul class="footer__contacts-list">
-                <li>г. Мытищи, Олимпийский проспект, д.10</li>
-                <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
-                <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>
-                <li><a href="tel:+792692608079">+7 (926) 926-080-79</a></li>
-              </ul>
-            </div>
+            </h3>
+            <ul class="footer__nav-list">
+              <li><a href="https://github.com/stormdice/smart-device">О компании</a></li>
+              <li><a href="https://github.com/stormdice/smart-device">Продукты</a></li>
+              <li><a href="https://github.com/stormdice/smart-device">Производство печатных плат</a></li>
+              <li><a href="https://github.com/stormdice/smart-device">Монтаж печатных плат</a></li>
+              <li><a href="https://github.com/stormdice/smart-device">Комплектующие</a></li>
+              <li><a href="https://github.com/stormdice/smart-device">Доставка</a></li>
+              <li><a href="https://github.com/stormdice/smart-device">Контакты</a></li>
+            </ul>
           </div>
-        </div>
-        <div class="footer__copyright">
-          <div class="container footer__container footer__container--copyright">
-            <p>Все права защищены</p>
-            <p>1999-2018 SD Service Devices</p>
-            <p><a href="#">Условия конфиденциальности</a></p>
-            <p>Developed by wow studio</p>
+          <div class="footer__content">
+            <h3>Наш офис</h3>
+            <button class="footer__button-open-nav js-open-footer-nav" type="button">
+              <span class="visually-hidden">Открыть/Закрыть список</span>
+            </button>
+            <ul class="footer__contacts-list">
+              <li>г. Мытищи, Олимпийский проспект, д.10</li>
+              <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
+              <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>
+              <li><a href="tel:+792692608079">+7 (926) 926-080-79</a></li>
+            </ul>
           </div>
         </div>
       </div>
-    </footer>
-    <div class="modal">
-      <div class="modal__content">
-        <form class="form form--modal" action="#">
-          <h2 class="form__title form__title--modal">Закажите звонок</h2>
-          <p class="form__text form__text--modal">
-            Оставьте контакты, мы проконсультируем<br />
-            вас бесплатно в удобное время
-          </p>
-          <div class="form__container form__container--modal">
-            <label class="form__label form__label--modal">
-              <span class="visually-hidden">Имя</span>
-              <input
-                class="form__input form__input--modal js-text-only"
-                type="text"
-                name="name"
-                minlength="3"
-                maxlength="256"
-                placeholder="Имя"
-                required
-              />
-            </label>
-            <label class="form__label form__label--modal">
-              <span class="visually-hidden">Телефон</span>
-              <input
-                class="form__input form__input--modal js-tel"
-                type="tel"
-                name="tel"
-                placeholder="Телефон"
-                required
-              />
-            </label>
-          </div>
-          <label class="form__label form__label--modal-question">
-            <span class="visually-hidden">Ваш вопрос</span>
-            <textarea
-              class="form__question form__question--modal"
-              name="question"
-              placeholder="Ваш вопрос"
-            ></textarea>
-          </label>
-          <button
-            class="btn form__ask-question form__ask-question--modal"
-            type="submit"
-          >
-            отправить
-          </button>
-          <div class="form__data-processing form__data-processing--modal">
-            <input
-              id="backcall-personal-data-processing"
-              type="checkbox"
-              checked
-            />
-            <label
-              class="form__data-processing-text form__data-processing-text--modal"
-              for="backcall-personal-data-processing"
-              >Я согласен на обработку персональных данных</label
-            >
-          </div>
-        </form>
-        <button
-          class="modal__close js-modal-close"
-          type="button"
-          aria-label="закрыть"
-        ></button>
+      <div class="footer__copyright">
+        <div class="container footer__container footer__container--copyright">
+          <p>Все права защищены</p>
+          <p>1999-2018 SD Service Devices</p>
+          <p><a href="https://github.com/stormdice/smart-device">Условия конфиденциальности</a></p>
+          <p>Developed by wow studio</p>
+        </div>
       </div>
     </div>
-    <script src="js/vendor.js"></script>
-    <script src="js/index.js"></script>
-  </body>
+  </footer>
+  <div class="modal" id="modal-backcall">
+    <div class="modal__content">
+      <form class="form form--modal" action="#">
+        <h2 class="form__title form__title--modal">Закажите звонок</h2>
+        <p class="form__text form__text--modal">
+          Оставьте контакты, мы проконсультируем<br />
+          вас бесплатно в удобное время
+        </p>
+        <div class="form__container form__container--modal">
+          <label class="form__label form__label--modal">
+            <span class="visually-hidden">Имя</span>
+            <input class="form__input form__input--modal js-text-only" type="text" name="name" minlength="3"
+              maxlength="256" placeholder="Имя" required />
+          </label>
+          <label class="form__label form__label--modal">
+            <span class="visually-hidden">Телефон</span>
+            <input class="form__input form__input--modal js-tel" type="tel" name="tel" placeholder="Телефон" required />
+          </label>
+        </div>
+        <label class="form__label form__label--modal-question">
+          <span class="visually-hidden">Ваш вопрос</span>
+          <textarea class="form__question form__question--modal" name="question" placeholder="Ваш вопрос"></textarea>
+        </label>
+        <button class="btn form__ask-question form__ask-question--modal" type="submit">
+          отправить
+        </button>
+        <div class="form__data-processing form__data-processing--modal">
+          <input id="backcall-personal-data-processing" type="checkbox" checked />
+          <label class="form__data-processing-text form__data-processing-text--modal"
+            for="backcall-personal-data-processing">Я согласен на обработку персональных данных</label>
+        </div>
+      </form>
+      <button class="modal__close js-modal-close" type="button" aria-label="закрыть"></button>
+    </div>
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
 </html>
